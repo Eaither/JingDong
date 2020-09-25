@@ -1,0 +1,21 @@
+@charset "utf-8";
+//宽高
+@mixin mySize($width, $height:$width) {
+    width: $width;
+    height: $height;
+}
+
+// 内层宽
+.w {
+    width: 1190px;
+    margin: auto;
+}
+
+// a标签
+a {
+    color: #666;
+    text-decoration: none;
+}
+
+// 网站顶部
+@import "./top/page_top";

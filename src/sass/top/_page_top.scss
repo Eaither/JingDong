@@ -1,0 +1,44 @@
+@charset "utf-8";
+// 顶部广告外壳
+#page_top {
+    @include mySize(100%, 80px);
+    background-color: rgb(66, 84, 192);
+}
+
+// 顶部图片
+.top_banner {
+    height: 100%;
+    display: block;
+    background: red;
+}
+
+// 顶部导航
+#top_nav {
+    width: 100%;
+    color: #999;
+    border-bottom: 1px solid #ddd;
+    background-color: #e3e4e5;
+}
+
+// 导航内容
+.shortcut {
+    height: 30px;
+    background-color: cornflowerblue;
+}
+
+// 网站头部logo
+#header {
+    width: 100%;
+}
+
+#header .w {
+    height: 140px;
+    background-color: deeppink;
+    position: relative;
+}
+
+// logo
+#logo {
+    @include mySize(190px, 120px);
+    background-color: lawngreen;
+}
