@@ -53,7 +53,8 @@
 }
 
 h3 {
-    @include mySize(210px, 45px);
+    @include mySize(150px, 45px);
+    position: relative;
     // position: relative;
     font-size: 28px;
     font-weight: 700;
@@ -62,8 +63,14 @@ h3 {
     padding: 0 30px;
     margin: 0 auto 20px;
     display: block;
-    // &:after{}
-    // &:before{}
+    &:after {}
+    &:before {
+        content: "";
+        @include positionLeft(0, 50%);
+        margin-top: -10px;
+        background-position: 0 0;
+        @include mySize(25px, 20px);
+    }
 }
 
 // 频道广场

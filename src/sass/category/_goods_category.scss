@@ -60,7 +60,8 @@
     position: relative;
     @include mySize(590px, 470px);
     margin-right: 10px;
-    background-color: cyan;
+    // background-color: cyan;
+    // @include flex(row, space-between, center);
     .banner_list {
         @include mySize(100%, 100%);
         position: relative;
@@ -88,13 +89,74 @@
             border: 1px solid rgba(0, 0, 0, .05);
             background: rgba(255, 255, 255, .4);
             border-radius: 50%;
-            .active {
-                width: 9px;
-                height: 9px;
-                top: 2px;
-                left: 0;
-                border: 3px solid rgba(0, 0, 0, .1);
-            }
+        }
+        .active {
+            position: relative;
+            // background-color: white;
+            width: 9px;
+            height: 9px;
+            top: -2px;
+            left: 0;
+            border: 3px solid rgba(0, 0, 0, .1);
+            background: rgba(255, 255, 255, 1);
+        }
+    }
+    // 左边按钮
+    .goods_ban_left {
+        @include positionLeft(0, 50%);
+        display: block;
+        border-radius: 0;
+        @include mySize(25px, 35px);
+        line-height: 35px;
+        background-color: #d9d9d9;
+        background-color: rgba(0, 0, 0, .15);
+        margin-top: -20px;
+        font-size: 20px;
+        z-index: 2;
+        border: none;
+        outline: none;
+        border-top-right-radius: 18px;
+        border-bottom-right-radius: 18px;
+        // 隐藏
+        // display: none;
+        &:hover {
+            background-color: rgba(0, 0, 0, .3);
+        }
+        span {
+            position: relative;
+            left: -3px;
+            display: block;
+            font-size: 12px;
+            color: rgba(255, 255, 255, .8);
+        }
+    }
+    .goods_ban_right {
+        position: absolute;
+        top: 50%;
+        border-radius: 0;
+        width: 25px;
+        height: 35px;
+        line-height: 35px;
+        background-color: #d9d9d9;
+        background-color: rgba(0, 0, 0, .15);
+        margin-top: -20px;
+        font-size: 20px;
+        z-index: 2;
+        border: none;
+        outline: none;
+        right: 0;
+        border-top-left-radius: 18px;
+        border-bottom-left-radius: 18px;
+        &:hover {
+            background-color: rgba(0, 0, 0, .3);
+        }
+        // display: none;
+        span {
+            position: relative;
+            right: -3px;
+            display: block;
+            font-size: 12px;
+            color: rgba(255, 255, 255, .8);
         }
     }
 }
@@ -106,4 +168,27 @@
     @include mySize(190px, 470px);
     margin-right: 10px;
     background-color: crimson;
+    .ban_list {
+        display: flex;
+        @include mySize(100%, 100%);
+        position: relative;
+        li {
+            @include positionLeft(0, 0);
+            opacity: 0;
+        }
+    }
+    .itemsli {
+        @include flex(column, space-between, center);
+        a {
+            display: block;
+            @include mySize(100%, 150px);
+            img {
+                @include mySize(100%, 100%);
+            }
+            margin-bottom: 10px;
+            &:last-child {
+                margin-bottom: 0px;
+            }
+        }
+    }
 }

@@ -331,7 +331,6 @@ body {
   width: 590px;
   height: 470px;
   margin-right: 10px;
-  background-color: cyan;
 }
 .ban_left .banner_list {
   width: 100%;
@@ -362,12 +361,71 @@ body {
   background: rgba(255, 255, 255, 0.4);
   border-radius: 50%;
 }
-.ban_left .ban_ol li .active {
+.ban_left .ban_ol .active {
+  position: relative;
   width: 9px;
   height: 9px;
-  top: 2px;
+  top: -2px;
   left: 0;
   border: 3px solid rgba(0, 0, 0, 0.1);
+  background: white;
+}
+.ban_left .goods_ban_left {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  display: block;
+  border-radius: 0;
+  width: 25px;
+  height: 35px;
+  line-height: 35px;
+  background-color: #d9d9d9;
+  background-color: rgba(0, 0, 0, 0.15);
+  margin-top: -20px;
+  font-size: 20px;
+  z-index: 2;
+  border: none;
+  outline: none;
+  border-top-right-radius: 18px;
+  border-bottom-right-radius: 18px;
+}
+.ban_left .goods_ban_left:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.ban_left .goods_ban_left span {
+  position: relative;
+  left: -3px;
+  display: block;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.8);
+}
+.ban_left .goods_ban_right {
+  position: absolute;
+  top: 50%;
+  border-radius: 0;
+  width: 25px;
+  height: 35px;
+  line-height: 35px;
+  background-color: #d9d9d9;
+  background-color: rgba(0, 0, 0, 0.15);
+  margin-top: -20px;
+  font-size: 20px;
+  z-index: 2;
+  border: none;
+  outline: none;
+  right: 0;
+  border-top-left-radius: 18px;
+  border-bottom-left-radius: 18px;
+}
+.ban_left .goods_ban_right:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.ban_left .goods_ban_right span {
+  position: relative;
+  right: -3px;
+  display: block;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.8);
 }
 
 /* 中间轮播图右边 */
@@ -376,6 +434,37 @@ body {
   height: 470px;
   margin-right: 10px;
   background-color: crimson;
+}
+.ban_right .ban_list {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.ban_right .ban_list li {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+.ban_right .itemsli {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.ban_right .itemsli a, .ban_right .itemsli .ban_left .banner_list a img, .ban_left .banner_list a .ban_right .itemsli img, .ban_right .itemsli .ban_left .banner_list li, .ban_left .banner_list .ban_right .itemsli li {
+  display: block;
+  width: 100%;
+  height: 150px;
+  margin-bottom: 10px;
+}
+.ban_right .itemsli a img, .ban_left .banner_list a .ban_right .itemsli img img, .ban_right .itemsli .ban_left .banner_list li img, .ban_left .banner_list .ban_right .itemsli li img {
+  width: 100%;
+  height: 100%;
+}
+.ban_right .itemsli a:last-child, .ban_right .itemsli .ban_left .banner_list a img:last-child, .ban_left .banner_list a .ban_right .itemsli img:last-child, .ban_right .itemsli .ban_left .banner_list li:last-child, .ban_left .banner_list .ban_right .itemsli li:last-child {
+  margin-bottom: 0px;
 }
 
 #shop_main {
@@ -453,8 +542,9 @@ body {
 }
 
 h3 {
-  width: 210px;
+  width: 150px;
   height: 45px;
+  position: relative;
   font-size: 28px;
   font-weight: 700;
   text-align: center;
@@ -462,6 +552,16 @@ h3 {
   padding: 0 30px;
   margin: 0 auto 20px;
   display: block;
+}
+h3:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  margin-top: -10px;
+  background-position: 0 0;
+  width: 25px;
+  height: 20px;
 }
 
 .channel {
