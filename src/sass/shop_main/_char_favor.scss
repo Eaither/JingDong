@@ -1,0 +1,78 @@
+@charset "utf-8";
+// 特色优选
+.char_favor {
+    @include flex(row, space-between, center);
+    margin-bottom: 20px;
+    background-color: darksalmon;
+    .grid_left {
+        @include mySize(590px, 340px);
+        background-color: blue;
+    }
+    .grid_right {
+        @include mySize(590px, 340px);
+        background-color: aquamarine;
+    }
+}
+
+// 发现好货
+.find_goods {
+    height: 260px;
+    background-color: crimson;
+    @include flex(row, space-between, center);
+    .find_left {
+        @include mySize(190px, 260px);
+        display: block;
+        background-color: chartreuse;
+    }
+    .find_right {
+        @include mySize(990px, 260px);
+        display: block;
+        background-color: cornflowerblue;
+    }
+}
+
+// 新品首发
+.new_goods {
+    @include flex(row, space-between, center);
+    margin: 20px 0;
+    &>.new {
+        @include mySize(290px, 340px);
+    }
+    .newArrival {
+        background-color: aquamarine;
+    }
+    .ranking {
+        background-color: blueviolet;
+    }
+    .nice-shop {
+        background-color: crimson;
+    }
+    .coupon {
+        background-color: cyan;
+    }
+}
+
+h3 {
+    @include mySize(210px, 45px);
+    // position: relative;
+    font-size: 28px;
+    font-weight: 700;
+    text-align: center;
+    line-height: 45px;
+    padding: 0 30px;
+    margin: 0 auto 20px;
+    display: block;
+    // &:after{}
+    // &:before{}
+}
+
+// 频道广场
+.channel {
+    height: 1005px;
+    background-color: cadetblue;
+    margin-bottom: 20px;
+    @include flex(column, center, center);
+    .square {
+        height: 940px;
+    }
+}

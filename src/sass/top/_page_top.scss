@@ -2,14 +2,26 @@
 // 顶部广告外壳
 #page_top {
     @include mySize(100%, 80px);
+    height: 80px;
     background-color: rgb(66, 84, 192);
-}
-
-// 顶部图片
-.top_banner {
-    height: 100%;
-    display: block;
-    background: red;
+    // 顶部图片
+    .top_banner {
+        height: 100%;
+        display: block;
+        .top_container {
+            position: relative;
+            @extend .top_banner;
+            background-image: url("http://img20.360buyimg.com/babel/jfs/t1/118746/29/18323/111231/5f686328Ef4c48e53/fc65234a6e83643f.jpg!q70.jpg.webp");
+            background-size: cover;
+            .iconfont {
+                position: absolute;
+                top: 5px;
+                right: 0px;
+                font-size: 20px;
+                margin-right: 4px;
+            }
+        }
+    }
 }
 
 // 顶部导航
@@ -23,22 +35,224 @@
 // 导航内容
 .shortcut {
     height: 30px;
-    background-color: cornflowerblue;
+    section {
+        float: left;
+        padding: 0 7px 0px;
+        .iconfont {
+            color: #f10215;
+            line-height: 30px;
+        }
+    }
+    .login>a:nth-child(2) {
+        margin-left: 8px;
+        color: #f10215;
+    }
+    .info_top {
+        float: right;
+        li {
+            float: left;
+        }
+        // 导航右边
+        .line {
+            overflow: hidden;
+            margin: 11px 5px 0;
+            width: 1px;
+            height: 10px;
+            background-color: #ccc;
+        }
+    }
+}
+
+.other {
+    padding: 0 7px;
+    height: 30px;
+    line-height: 30px;
+    @include flex(row,
+    space-around,
+    center);
+    a {
+        display: block;
+    }
+    .iconfont {
+        margin-left: 3px;
+        display: block;
+        font-size: 12px;
+    }
+    &:nth-child(9)>a {
+        color: #f10215;
+    }
+    &:last-child {
+        position: relative;
+        a {
+            width: 60px;
+        }
+        .mobile {
+            @include mySize(76px,
+            76px);
+            background-color: #f10215;
+            // margin: 5px auto;
+            @include positionLeft(0px,
+            35px);
+            background: #ffffff url(../img/code.png) 50% no-repeat;
+            z-index: 3;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, .1);
+        }
+    }
 }
 
 // 网站头部logo
 #header {
-    width: 100%;
-}
-
-#header .w {
-    height: 140px;
-    background-color: deeppink;
+    @include mySize(100%,
+    140px);
     position: relative;
+    background-color: #fff;
+    .w {
+        // background-color: deeppink;
+        position: relative;
+        height: 60px;
+    }
 }
 
 // logo
 #logo {
-    @include mySize(190px, 120px);
-    background-color: lawngreen;
+    @include mySize(190px,
+    120px);
+    @include positionLeft(0px,
+    10px);
+    a {
+        @include mySize(100%,
+        100%);
+        display: block;
+        h1 {
+            text-indent: -999px;
+        }
+        // background-image: url(./img/sprite.png);
+        // background-color: lawngreen;
+    }
+}
+
+// 搜索框
+.search {
+    @include positionLeft(260px,
+    25px);
+    @include mySize(550px,
+    32px);
+    border: 2px solid #e2231a;
+    background: #fff;
+    .shelper {
+        @include positionLeft(0px,
+        35px);
+        width: 488px;
+    }
+    .search_inner {
+        @include positionLeft(0px,
+        0px);
+        outline: none;
+        padding: 2px 44px 2px 17px;
+        @include mySize(425px,
+        26px);
+        border: 1px solid transparent;
+        line-height: 32px;
+        font-size: 12px;
+    }
+    input {
+        @extend .search_inner
+    }
+    .pic {
+        position: absolute;
+        right: 75px;
+        top: 10px;
+        @include mySize(20px,
+        20px);
+        .iconfont {
+            display: block;
+            @include mySize(20px,
+            20px);
+            line-height: 14px;
+            font-size: 18px;
+            text-align: center;
+            color: #9f9f9f;
+            cursor: pointer;
+        }
+    }
+    .search_btn {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 3;
+        // outline: none;
+        @include mySize(58px,
+        32px);
+        line-height: 32px;
+        border: none;
+        background-color: #e1251b;
+        font-size: 20px;
+        font-weight: 700;
+        color: #fff;
+    }
+}
+
+.cart {
+    position: absolute;
+    right: 230px;
+    top: 25px;
+    @include mySize(130px,
+    34px);
+    background-color: #fff;
+    // text-align: center;
+    // line-height: 34px;
+    border: 1px solid #e3e4e5;
+    @include flex(row,
+    center,
+    center);
+    .iconfont {
+        margin-right: 13px;
+        color: #e1251b;
+    }
+    a {
+        color: #e1251b;
+    }
+}
+
+// 热刺列表
+.hotwords {
+    @include positionLeft(425px,
+    65px);
+    a {
+        line-height: 20px;
+        margin-right: 6px;
+        white-space: nowrap;
+        color: #999;
+        &:first-child {
+            color: #e1251b;
+        }
+    }
+}
+
+.navitems {
+    position: absolute;
+    bottom: 0;
+    left: 368px;
+    ul {
+        @include flex(row,
+        center,
+        center);
+        li {
+            margin-left: 1px;
+        }
+        a {
+            position: relative;
+            display: block;
+            height: 40px;
+            line-height: 40px;
+            font-size: 15px;
+            color: #333;
+            margin: 0 11px;
+        }
+        .first,
+        .sec {
+            font-weight: 700;
+            color: #e1251b;
+        }
+    }
 }

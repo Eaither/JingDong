@@ -1,0 +1,109 @@
+@charset "utf-8";
+
+/*外壳*/
+
+#goods_category {
+    // width: 100%;
+    padding-top: 10px;
+    .w {
+        height: 470px;
+        margin-bottom: 30px;
+        @include flex(row, space-between, center);
+    }
+    .inner_left {
+        /* 左边分类 */
+        @include mySize(190px, 470px);
+        background-color: #fefefe;
+        margin-right: 10px;
+        ul {
+            overflow: hidden;
+            height: 450px;
+            background-color: #fefefe;
+            color: #636363;
+            margin-top: 10px;
+            width: 190px;
+            li {
+                height: 25px;
+                line-height: 25px;
+                padding-left: 18px;
+                .active {
+                    background-color: #d9d9d9;
+                }
+                a {
+                    font-size: 14px;
+                    color: #333;
+                    text-decoration: none;
+                }
+                span {
+                    padding: 0 2px;
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+    .inner_middle {
+        // @include mySize(790px, 470px);
+        @include flex(row, space-between, center);
+    }
+    .inner_right {
+        /* 右边 */
+        @include mySize(190px, 470px);
+        background-color: azure;
+    }
+}
+
+
+/* 中间轮播图 */
+
+//  左边
+.ban_left {
+    position: relative;
+    @include mySize(590px, 470px);
+    margin-right: 10px;
+    background-color: cyan;
+    .banner_list {
+        @include mySize(100%, 100%);
+        position: relative;
+        a {
+            @include mySize(100%, 100%);
+            img {
+                @extend a;
+            }
+        }
+        li {
+            opacity: 0;
+            @extend a;
+            @include positionLeft(0, 0);
+        }
+    }
+    .ban_ol {
+        position: absolute;
+        left: 30px;
+        bottom: 20px;
+        display: flex;
+        li {
+            width: 8px;
+            height: 8px;
+            margin-right: 4px;
+            border: 1px solid rgba(0, 0, 0, .05);
+            background: rgba(255, 255, 255, .4);
+            border-radius: 50%;
+            .active {
+                width: 9px;
+                height: 9px;
+                top: 2px;
+                left: 0;
+                border: 3px solid rgba(0, 0, 0, .1);
+            }
+        }
+    }
+}
+
+
+/* 中间轮播图右边 */
+
+.ban_right {
+    @include mySize(190px, 470px);
+    margin-right: 10px;
+    background-color: crimson;
+}

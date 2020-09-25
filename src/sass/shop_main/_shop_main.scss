@@ -1,0 +1,13 @@
+@charset "utf-8";
+#shop_main {
+    width: 1190px;
+    // height: 200px;
+    // background-color: aqua;
+}
+
+// 秒杀部分
+@import "seckill";
+// 特色优选
+@import "char_favor";
+// 为你推荐
+@import "recommend";

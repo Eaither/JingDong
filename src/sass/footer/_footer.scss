@@ -1,0 +1,14 @@
+@charset "utf-8";
+#footer {
+    width: 1190px;
+    @include flex(column, center, center);
+    height: 565px;
+    background-color: blueviolet;
+    .service {
+        padding: 30px 0;
+        @include flex(row, center, center);
+        ul {
+            height: 42px;
+        }
+    }
+}

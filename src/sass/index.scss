@@ -5,6 +5,29 @@
     height: $height;
 }
 
+@mixin positionLeft ($left, $top) {
+    position: absolute;
+    top: $top;
+    left: $left;
+}
+
+@mixin positionRight ($right, $bottom) {
+    position: absolute;
+    bottom: $bottom;
+    right: $right;
+}
+
+@mixin flex($column, $m_axis, $c_axis) {
+    display: flex;
+    flex-direction: $column;
+    justify-content: $m_axis;
+    align-items: $c_axis;
+}
+
+// * {
+//     margin: 0;
+//     padding: 0;
+// }
 // 内层宽
 .w {
     width: 1190px;
@@ -13,9 +36,26 @@
 
 // a标签
 a {
-    color: #666;
+    color: #999;
     text-decoration: none;
+}
+
+// li {
+//     list-style: none;
+// }
+body {
+    background-color: #f4f4f4;
+}
+
+.main_container {
+    @include flex(column, center, center);
 }
 
 // 网站顶部
 @import "./top/page_top";
+// 商品分类部分
+@import "./category/goods_category";
+// 商城主要部分
+@import "./shop_main/shop_main.scss";
+//页面尾部
+@import "./footer/footer";
