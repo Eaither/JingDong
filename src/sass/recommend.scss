@@ -50,6 +50,14 @@ img {
     display: block;
 }
 
+@mixin many_el() {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
 // li {
 //     list-style: none;
 // }
@@ -61,11 +69,4 @@ body {
     @include flex(column, center, center);
 }
 
-// 网站顶部
-@import "./top/page_top";
-// 商品分类部分
-@import "./category/goods_category";
-// 商城主要部分
-@import "./shop_main/shop_main.scss";
-//页面尾部
-@import "./footer/footer";
+@import "./shop_main/recommend";

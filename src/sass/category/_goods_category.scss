@@ -3,10 +3,8 @@
 /*外壳*/
 
 #goods_category {
-    // width: 100%;
     padding-top: 10px;
     .w {
-        height: 470px;
         margin-bottom: 30px;
         @include flex(row, space-between, center);
     }
@@ -41,14 +39,10 @@
             }
         }
     }
+    // 中间轮播图
     .inner_middle {
         // @include mySize(790px, 470px);
         @include flex(row, space-between, center);
-    }
-    .inner_right {
-        /* 右边 */
-        @include mySize(190px, 470px);
-        background-color: azure;
     }
 }
 
@@ -68,12 +62,14 @@
         a {
             @include mySize(100%, 100%);
             img {
-                @extend a;
+                // @extend a;
+                @include mySize(100%, 100%);
             }
         }
         li {
             opacity: 0;
-            @extend a;
+            // @extend a;
+            @include mySize(100%, 100%);
             @include positionLeft(0, 0);
         }
     }
@@ -92,73 +88,90 @@
         }
         .active {
             position: relative;
-            // background-color: white;
+            top: -2px;
+            // left: 0;
+            border: 3px solid rgba(0, 0, 0, .1);
+            // background: rgba(255, 255, 255, 1);
+            content: " ";
             width: 9px;
             height: 9px;
-            top: -2px;
+            // position: absolute;
+            border-radius: 50%;
             left: 0;
-            border: 3px solid rgba(0, 0, 0, .1);
-            background: rgba(255, 255, 255, 1);
+            background-color: white;
         }
     }
-    // 左边按钮
-    .goods_ban_left {
-        @include positionLeft(0, 50%);
+}
+
+// 左边按钮
+.goods_ban_left {
+    @include positionLeft(0, 50%);
+    display: block;
+    border-radius: 0;
+    @include mySize(25px, 35px);
+    line-height: 35px;
+    background-color: #d9d9d9;
+    background-color: rgba(0, 0, 0, .15);
+    margin-top: -20px;
+    font-size: 20px;
+    z-index: 2;
+    border: none;
+    outline: none;
+    border-top-right-radius: 18px;
+    border-bottom-right-radius: 18px;
+    // 隐藏
+    &:hover {
+        background-color: rgba(0, 0, 0, .3);
+    }
+    span {
+        position: relative;
+        left: -3px;
         display: block;
-        border-radius: 0;
-        @include mySize(25px, 35px);
-        line-height: 35px;
-        background-color: #d9d9d9;
-        background-color: rgba(0, 0, 0, .15);
-        margin-top: -20px;
-        font-size: 20px;
-        z-index: 2;
-        border: none;
-        outline: none;
-        border-top-right-radius: 18px;
-        border-bottom-right-radius: 18px;
-        // 隐藏
-        // display: none;
-        &:hover {
-            background-color: rgba(0, 0, 0, .3);
-        }
-        span {
-            position: relative;
-            left: -3px;
-            display: block;
-            font-size: 12px;
-            color: rgba(255, 255, 255, .8);
-        }
+        font-size: 12px;
+        color: rgba(255, 255, 255, .8);
     }
-    .goods_ban_right {
-        position: absolute;
-        top: 50%;
-        border-radius: 0;
-        width: 25px;
-        height: 35px;
-        line-height: 35px;
-        background-color: #d9d9d9;
-        background-color: rgba(0, 0, 0, .15);
-        margin-top: -20px;
-        font-size: 20px;
-        z-index: 2;
-        border: none;
-        outline: none;
-        right: 0;
-        border-top-left-radius: 18px;
-        border-bottom-left-radius: 18px;
-        &:hover {
-            background-color: rgba(0, 0, 0, .3);
-        }
-        // display: none;
-        span {
-            position: relative;
-            right: -3px;
-            display: block;
-            font-size: 12px;
-            color: rgba(255, 255, 255, .8);
-        }
+}
+
+.goods_ban_right {
+    position: absolute;
+    top: 50%;
+    border-radius: 0;
+    width: 25px;
+    height: 35px;
+    line-height: 35px;
+    background-color: #d9d9d9;
+    background-color: rgba(0, 0, 0, .15);
+    margin-top: -20px;
+    font-size: 20px;
+    z-index: 2;
+    border: none;
+    outline: none;
+    right: 0;
+    border-top-left-radius: 18px;
+    border-bottom-left-radius: 18px;
+    &:hover {
+        background-color: rgba(0, 0, 0, .3);
     }
+    span {
+        position: relative;
+        right: -3px;
+        display: block;
+        font-size: 12px;
+        color: rgba(255, 255, 255, .8);
+    }
+}
+
+
+/* 三联轮播按钮 */
+
+.goods_ol_left {
+    @extend .goods_ban_left;
+    display: none;
+}
+
+.goods_ol_right {
+    @extend .goods_ban_right;
+    display: none;
 }
 
 
@@ -167,7 +180,7 @@
 .ban_right {
     @include mySize(190px, 470px);
     margin-right: 10px;
-    background-color: crimson;
+    position: relative;
     .ban_list {
         display: flex;
         @include mySize(100%, 100%);
@@ -189,6 +202,135 @@
             &:last-child {
                 margin-bottom: 0px;
             }
+        }
+    }
+}
+
+// 右边登录注测，
+.inner_right {
+    /* 右边 */
+    @include mySize(190px, 470px);
+    background-color: white;
+    // margin-right: -10px;
+    section {
+        width: 190px;
+        .login_wrap {
+            @include flex(row, center, center);
+            height: 65px;
+        }
+        &:nth-child(1) {
+            // height: 102px;
+            img {
+                @include mySize(40px, 40px);
+                display: block;
+                border-radius: 50%;
+            }
+            .head_pic {
+                @extend img;
+                margin-right: 20px;
+                border: 1px solid white;
+                // border-radius: 50%;
+                // overflow: hidden;
+            }
+            aside {
+                color: #999;
+                font-size: 12px;
+                a {
+                    margin-right: 3px;
+                }
+            }
+            .new_plus {
+                @include flex(row, center, flex-start);
+                height: 35px;
+                position: relative;
+                a {
+                    margin: 0 5px;
+                    @include mySize(70px, 25px);
+                    line-height: 25px;
+                    font-size: 12px;
+                    text-align: center;
+                    color: #fff;
+                    border-radius: 13px;
+                    background: #e1251b;
+                    &:nth-child(2) {
+                        background: #363634;
+                        color: #e5d790;
+                    }
+                    &:hover {
+                        background-color: #c81623;
+                        color: #fff;
+                    }
+                }
+                &:after {
+                    position: absolute;
+                    height: 1px;
+                    left: 15px;
+                    right: 15px;
+                    background: linear-gradient(270deg, white, #eeeeee, #eeeeee, white);
+                    content: " ";
+                    bottom: 0;
+                }
+            }
+        }
+        &:nth-child(2) {
+            // height: 130px;
+            .title {
+                @include flex(row, space-between, center);
+                color: #999;
+                height: 20px;
+                padding: 10px 0 0;
+                position: relative;
+                line-height: 20px;
+                margin-bottom: 8px;
+                aside {
+                    margin-right: 15px;
+                }
+                .iconfont {
+                    color: #999;
+                    font-size: 10px;
+                }
+            }
+            h5 {
+                display: inline-block;
+                font-size: 14px;
+                margin-left: 15px;
+                color: #333;
+            }
+            .hot_list {
+                li {
+                    @include flex(row, center, center);
+                    height: 16px;
+                    line-height: 16px;
+                    color: #999;
+                    margin-bottom: 6px;
+                    a {
+                        width: 120px;
+                        @include ellipsis();
+                    }
+                    span {
+                        @include mySize(35px, 16px);
+                        line-height: 16px;
+                        color: #e1251b;
+                        text-align: center;
+                        background-color: rgba(225, 37, 27, .08);
+                        margin-right: 6px;
+                    }
+                }
+            }
+        }
+    }
+    /* 图标tab */
+    .tab_service {
+        height: 238px;
+        position: relative;
+        &:before {
+            position: absolute;
+            height: 1px;
+            left: 15px;
+            right: 15px;
+            background: linear-gradient(270deg, white, #eeeeee, #eeeeee, white);
+            content: " ";
+            top: 0;
         }
     }
 }

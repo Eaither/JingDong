@@ -17,18 +17,50 @@
 // 发现好货
 .find_goods {
     height: 260px;
-    background-color: crimson;
+    // background-color: crimson;
     @include flex(row, space-between, center);
-    .find_left {
-        @include mySize(190px, 260px);
-        display: block;
-        background-color: chartreuse;
+}
+
+.find_left {
+    @include mySize(190px, 260px);
+    display: block;
+    background-image: url(https://misc.360buyimg.com/mtd/pc/index_2019/1.0.0/assets/img/e222ff5affd7051c21a5df1af734893b.png);
+    .logo-text {
+        width: 160px;
+        height: 90px;
+        margin-top: 15px;
+        margin-left: auto;
+        margin-right: auto;
+        background-size: contain;
+        background-position: 50%;
+        background-repeat: no-repeat;
+        font-size: 16px;
+        position: relative;
+        color: rgba(255, 255, 255, .8);
+        span {
+            position: absolute;
+            top: 56px;
+            left: 20px;
+        }
+        i {
+            background-position: 0 -16px;
+            width: 16px;
+            height: 16px;
+            position: absolute;
+            margin-left: 6px;
+            margin-top: -2px;
+            vertical-align: middle;
+            display: inline-block;
+            top: 60px;
+            left: 100px;
+        }
     }
-    .find_right {
-        @include mySize(990px, 260px);
-        display: block;
-        background-color: cornflowerblue;
-    }
+}
+
+.find_right {
+    @include mySize(990px, 260px);
+    display: block;
+    background-color: cornflowerblue;
 }
 
 // 新品首发
@@ -49,37 +81,5 @@
     }
     .coupon {
         background-color: cyan;
-    }
-}
-
-h3 {
-    @include mySize(150px, 45px);
-    position: relative;
-    // position: relative;
-    font-size: 28px;
-    font-weight: 700;
-    text-align: center;
-    line-height: 45px;
-    padding: 0 30px;
-    margin: 0 auto 20px;
-    display: block;
-    &:after {}
-    &:before {
-        content: "";
-        @include positionLeft(0, 50%);
-        margin-top: -10px;
-        background-position: 0 0;
-        @include mySize(25px, 20px);
-    }
-}
-
-// 频道广场
-.channel {
-    height: 1005px;
-    background-color: cadetblue;
-    margin-bottom: 20px;
-    @include flex(column, center, center);
-    .square {
-        height: 940px;
     }
 }
