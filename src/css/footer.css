@@ -1,0 +1,152 @@
+.w {
+  width: 1190px;
+  margin: auto;
+}
+
+a {
+  color: #999;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+}
+
+body {
+  background-color: #f4f4f4;
+}
+
+.main_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 565px;
+}
+#footer .footer_service {
+  width: 100%;
+  padding: 30px 0;
+  border-bottom: 1px solid #dedede;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+#footer .footer_service .footer_list {
+  width: 1190px;
+  height: 42px;
+  display: flex;
+}
+#footer .footer_service .footer_list .txt {
+  height: 42px;
+  line-height: 42px;
+  font-size: 18px;
+  font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #444;
+}
+#footer .footer_service li {
+  width: 254px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding-left: 45px;
+}
+#footer .footer_service li:nth-child(2) h5 {
+  background-position: -41px -192px;
+}
+#footer .footer_service li:nth-child(3) h5 {
+  background-position: -82px -192px;
+}
+#footer .footer_service li:nth-child(4) h5 {
+  background-position: -123px -192px;
+}
+#footer .footer_service h5 {
+  display: block;
+  width: 36px;
+  height: 42px;
+  margin-right: 10px;
+  text-indent: -9999px;
+  background-image: url("../img/spirit.png");
+  background-position: 0 -192px;
+  background-repeat: no-repeat;
+}
+
+.help {
+  padding: 20px 0;
+  display: flex;
+  border-bottom: 1px solid #e1e1e1;
+}
+.help .mod_help_nav {
+  width: 198px;
+}
+.help .mod_help_nav h5 {
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+.help .mod_help_nav li {
+  line-height: 22px;
+}
+.help .mod_help_nav li a {
+  color: #666;
+}
+.help .help_cover {
+  width: 180px;
+  padding: 0 10px;
+}
+.help .help_cover h5 {
+  margin-bottom: 15px;
+  font-size: 14px;
+  text-align: center;
+}
+.help .help_cover p {
+  color: #666;
+  line-height: 22px;
+}
+.help .help_cover p:nth-child(2) {
+  text-align: right;
+}
+
+.copyright {
+  padding: 15px 0;
+}
+.copyright span {
+  margin: 0 10px;
+  color: #999999;
+}
+.copyright .copyright_links {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.copyright .address {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+  line-height: 22px;
+}
+.copyright p:last-child {
+  margin: 25px 0;
+  height: 32px;
+}
+.copyright p:last-child a {
+  margin: 0 3px;
+  width: 103px;
+  height: 100%;
+}
+
+/*# sourceMappingURL=footer.css.map */

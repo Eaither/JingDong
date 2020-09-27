@@ -39,13 +39,16 @@
     .seckill_middle {
         @include mySize(800px, 260px);
         position: relative;
+        overflow: hidden;
         .seckill_list {
+            flex-wrap: nowrap;
             background-color: white;
             display: flex;
             img {
                 @include mySize(140px, 140px);
             }
             li {
+                flex-shrink: 0;
                 @include mySize(200px, 260px);
             }
             a {

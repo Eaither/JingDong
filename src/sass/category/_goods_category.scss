@@ -10,6 +10,7 @@
     }
     .inner_left {
         /* 左边分类 */
+        position: relative;
         @include mySize(190px, 470px);
         background-color: #fefefe;
         margin-right: 10px;
@@ -24,9 +25,6 @@
                 height: 25px;
                 line-height: 25px;
                 padding-left: 18px;
-                .active {
-                    background-color: #d9d9d9;
-                }
                 a {
                     font-size: 14px;
                     color: #333;
@@ -37,6 +35,9 @@
                     font-size: 12px;
                 }
             }
+            .active {
+                background-color: #d9d9d9;
+            }
         }
     }
     // 中间轮播图
@@ -44,6 +45,25 @@
         // @include mySize(790px, 470px);
         @include flex(row, space-between, center);
     }
+}
+
+.cartlist {
+    position: absolute;
+    left: 191px;
+    top: 0;
+    width: 998px;
+    min-height: 468px;
+    border: 1px solid #f7f7f7;
+    background-color: #fff;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, .3);
+    display: none;
+    transition: top 0.3s ease;
+    z-index: 10;
+}
+
+.item {
+    padding: 20px;
+    display: none;
 }
 
 

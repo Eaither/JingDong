@@ -48,9 +48,6 @@ a {
 
 img {
     display: block;
-    &:hover {
-        opacity: 0.8;
-    }
 }
 
 // li {
@@ -64,9 +61,4 @@ body {
     @include flex(column, center, center);
 }
 
-// 网站顶部
-@import "./top/page_top";
-// 商品分类部分
-@import "./category/goods_category";
-// 商城主要部分
-@import "./shop_main/shop_main.scss";
+@import "./footer/footer";
