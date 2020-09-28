@@ -141,14 +141,109 @@ body {
   position: absolute;
   top: 10px;
   left: 0px;
+  position: relative;
 }
 #logo a {
   width: 100%;
   height: 100%;
   display: block;
+  background: url("../img/sprite.png") no-repeat;
+  background-position: 0 0;
 }
 #logo a h1 {
   text-indent: -999px;
+}
+
+.gif {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+}
+.gif .gif_img {
+  display: block;
+  width: 134px;
+  height: 120px;
+  background-color: #fff;
+  opacity: 0;
+  margin: 0 auto;
+  clear: both;
+  background-size: auto 100%;
+}
+.gif .scene_text {
+  position: absolute;
+  line-height: 20px;
+  left: 50%;
+  opacity: 0;
+  width: 120px;
+  font-size: 16px;
+  margin-left: -60px;
+  top: 36px;
+  font-weight: 700;
+  background: transparent;
+  color: #333;
+  text-align: center;
+  z-index: 1;
+  color: #494949;
+}
+.gif .scene_btn {
+  position: absolute;
+  line-height: 20px;
+  left: 50%;
+  opacity: 0;
+  width: 60px;
+  height: 20px;
+  bottom: 35px;
+  margin-left: -32px;
+  text-indent: 4px;
+  font-size: 12px;
+  text-align: center;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  border-radius: 11px;
+  color: white;
+  background-color: #ffd07d;
+}
+
+.search-m {
+  width: 1190px;
+  margin: 0 auto;
+  position: relative;
+  height: 52px;
+}
+
+.search-logo {
+  background-image: url("../img/sprite.png");
+  background-position: 0 -120px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  width: 125px;
+  height: 40px;
+  display: none;
+  text-indent: -999px;
+  position: absolute;
+  left: 0;
+  top: 4px;
+}
+
+.search-fix {
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: -60px;
+  width: 100%;
+  border-bottom: 2px solid #f10214;
+  background-color: #fff;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+  animation: .5s ease-in-out;
+}
+.search-fix .search {
+  top: 10px;
+}
+.search-fix .cart {
+  top: 10px;
 }
 
 .search {
@@ -199,7 +294,6 @@ body {
   position: absolute;
   top: 0;
   right: 0;
-  z-index: 3;
   width: 58px;
   height: 32px;
   line-height: 32px;

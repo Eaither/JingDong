@@ -23,6 +23,80 @@ body {
   align-items: center;
 }
 
+#top_nav {
+  width: 100%;
+  color: #999;
+  border-bottom: 1px solid #ddd;
+  background-color: #e3e4e5;
+}
+
+.shortcut {
+  height: 30px;
+}
+.shortcut section {
+  float: left;
+  padding: 0 7px 0px;
+}
+.shortcut section .iconfont {
+  color: #f10215;
+  line-height: 30px;
+}
+.shortcut .login > a:nth-child(2) {
+  margin-left: 8px;
+  color: #f10215;
+}
+.shortcut .info_top {
+  float: right;
+}
+.shortcut .info_top li {
+  float: left;
+}
+.shortcut .info_top .line {
+  overflow: hidden;
+  margin: 11px 5px 0;
+  width: 1px;
+  height: 10px;
+  background-color: #ccc;
+}
+
+.other {
+  padding: 0 7px;
+  height: 30px;
+  line-height: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.other a {
+  display: block;
+}
+.other .iconfont {
+  margin-left: 3px;
+  display: block;
+  font-size: 12px;
+}
+.other:nth-child(9) > a {
+  color: #f10215;
+}
+.other:last-child {
+  position: relative;
+}
+.other:last-child a {
+  width: 60px;
+}
+.other:last-child .mobile {
+  width: 76px;
+  height: 76px;
+  background-color: #f10215;
+  position: absolute;
+  top: 35px;
+  left: 0px;
+  background: #ffffff url(../img/code.png) 50% no-repeat;
+  z-index: 3;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
 #footer {
   width: 100%;
   display: flex;
@@ -170,7 +244,7 @@ body {
 
 .elevator {
   position: fixed;
-  top: 74px;
+  top: 75px;
   left: 50%;
   margin-left: 615px;
   z-index: 100;
@@ -210,8 +284,5 @@ body {
   background-color: #c81623;
   color: #fff;
 }
-.elevator .active .ele_lk_txt {
-  color: #e1251b;
-}
 
-/*# sourceMappingURL=footer.css.map */
+/*# sourceMappingURL=list.css.map */

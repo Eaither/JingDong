@@ -10,48 +10,66 @@ define([], function() {
                 $('#page_top').hide();
             });
 
-            //列表二级菜单
-            // ! function() {
-            // 菜单元素
-            $cate_menu = $('.cate_menu');
-            $cateLi = $('.cate_menu li');
-            $cartlist = $('.cartlist');
-            $item = $('.carlist .item');
 
-            // 鼠标划入改变li样式
-            $cateLi.on('mouseover', function() {
-                $(this).addClass('active').siblings().removeClass('active');
-                $item.eq($(this).index()).show().siblings(".item").hide();
-                $cartlist.show();
-            });
-            // 鼠标划出隐藏
-            $cateLi.on('mouseout', function() {
-                $(this).removeClass("active");
-                $cartlist.hide();
-            });
 
-            // 鼠标划入划出item，cartlist状态
-            $cartlist.hover(() => {
-                $cartlist.show();
-            }, () => {
-                $cartlist.hide();
-            });
-
-            //根据页面卷曲的高度cartlist下移相应位置
             $(window).on('scroll', function() {
-                // 页面卷去高度
-                let $cTop = $(window).scrollTop();
-                if ($cTop > $('.inner_left').offset().top) {
-                    $cartlist.css({
-                        top: $cTop - $('.inner_left').offset().top
+                if ($(window).scrollTop() > 500) {
+                    $('.search-fix').stop(true).animate({
+                        top: 0
                     });
                 } else {
-                    $cartlist.css({
-                        top: 0
+                    $('.search-fix').css({
+                        top: -60
                     });
                 }
             });
-            // }();
+
+
+
+
+
+            //列表二级菜单
+            ! function() {
+                // 菜单元素
+                $cate_menu = $('.cate_menu');
+                $cateLi = $('.cate_menu li');
+                $cartlist = $('.cartlist');
+                $item = $('.cartlist .item1');
+
+                // 鼠标划入改变li样式
+                $cateLi.on('mouseover', function() {
+                    $(this).addClass('active').siblings().removeClass('active');
+                    $item.eq($(this).index()).show().siblings(".item1").hide();
+                    $cartlist.show();
+                });
+                // 鼠标划出隐藏
+                $cateLi.on('mouseout', function() {
+                    $(this).removeClass("active");
+                    $cartlist.hide();
+                });
+
+                // 鼠标划入划出item，cartlist状态
+                $cartlist.hover(() => {
+                    $cartlist.show();
+                }, () => {
+                    $cartlist.hide();
+                });
+
+                //根据页面卷曲的高度cartlist下移相应位置
+                $(window).on('scroll', function() {
+                    // 页面卷去高度
+                    let $cTop = $(window).scrollTop();
+                    if ($cTop > $('.inner_left').offset().top) {
+                        $cartlist.css({
+                            top: $cTop - $('.inner_left').offset().top
+                        });
+                    } else {
+                        $cartlist.css({
+                            top: 0
+                        });
+                    }
+                });
+            }();
 
 
             // 大轮播图切换动画函数
@@ -228,19 +246,24 @@ define([], function() {
             }();
 
             // 京东秒杀幻灯片效果
+            // 获取后端数据
             ! function() {
-                // 获取后端数据
                 $.ajax({
                     url: "http://192.168.13.24/jingdong/php/alldata.php",
                     dataType: "json"
                 }).done((data) => {
-                    // console.log(data);
                     let $strLi = ''; //定义一个空字符串用于将获取的数据存储
                     // 遍历获取的数据
-                    const list = $('.seckill_list');
+                    const $seckill_list = $('.seckill_list');
+                    // 把ul改成定位
+                    $seckill_list.css({
+                        position: 'absolute',
+                        top: 0,
+                        left: 0
+                    });
                     $.each(data, function(index, value) {
                         // alert(1);
-                        if (index < 30) {
+                        if (index < 8) {
                             $strLi += `
                             <li>
                             <a href="#">
@@ -261,31 +284,125 @@ define([], function() {
                         }
 
                     }); //each
-                    list.html($strLi);
-                    // $('.seckill_list').html($strLi);
+                    $seckill_list.html($strLi);
+                    // 克隆前四个li追加给ul
+                    let $seckill_li = $('.seckill_list li');
+                    $.each($seckill_li, function(index, value) {
+                        if (index < 4) {
+                            let $clone_li = $seckill_li.eq(index).clone(true, true);
+                            $seckill_list.append($clone_li)
+                        } else {
+                            return false;
+                        }
+                    });
+
+                    // 单个li长度
+                    let $liLen = $seckill_li.eq(1).width();
+                    // 给ul设置宽度
+                    $seckill_list.width($liLen * ($seckill_li.length + 4));
+                    let num_li = 0;
+                    $('.goods_seckill_right').on('click', function() {
+                        num_li += 4;
+                        if (num_li > $seckill_li.length) {
+                            num_li = 4;
+                            // li回到原点
+                            $seckill_list.css({
+                                left: 0
+                            });
+                        };
+                        $seckill_list.stop(true).animate({
+                            left: -num_li * $liLen
+                        });
+                    });
+                    $('.goods_seckill_left').on('click', function() {
+                        num_li -= 4;
+                        if (num_li < 0) {
+                            num_li = ($seckill_li.length) - 4;
+                            $seckill_list.css({
+                                left: -($seckill_li.length) * $liLen
+                            });
+                        }
+                        console.log(num_li);
+                        $seckill_list.stop(true).animate({
+                            left: -num_li * $liLen
+                        });
+                    });
                 }); //done
             }();
 
 
-            // 为你推荐列表--元素
-            ! function() {
-                const $goods_list = $('.goods_list');
-                const $goods_list_li = $('.goods_list>li');
-                // 利用ajax请求获取接口数据
-                // console.log($goods_list)
-                $.ajax({
-                    url: "http://192.168.13.24/jingdong/php/alldata.php",
-                    dataType: "json"
-                }).done((data) => {
-                    // console.log(data);
-                    let $strLi = ''; //定义一个空字符串用于将获取的数据
-                    // 遍历获取的数据
-                    $.each(data, function(index, value) {
-                        let price = value.price.toString().split(".");
-                        $strLi += `
+            // 楼梯效果
+            const $elevator = $('.elevator'); //楼梯外层盒子
+            const $stairs = $('.ele_item'); //楼梯
+            const $level = $('.level'); //楼层
+
+
+            // 回到顶部
+            $('.back').on('click', function() {
+                $('html,body').animate({
+                    scrollTop: 0
+                });
+            });
+            // 添加点击事件滚动到对应的楼层
+            $stairs.not('.back').on('click', function() {
+                $(this).addClass('active').siblings().removeClass('active');
+                // 获取楼层top
+                if ($level.eq($(this).index())) {
+                    let $levelTop = $level.eq($(this).index()).offset().top - 74;
+                    $('html,body').animate({
+                        scrollTop: $levelTop
+                    });
+                }
+            });
+
+            $(window).on('scroll', function() {
+                let $top = $(window).scrollTop();
+
+
+                // 拖动滚动条给楼层
+                $level.each(function(index, element) {
+                    // alert(1)
+                    let $levelTop = $(element).offset.top + $(element).height / 3;
+
+                    if ($levelTop > $top) {
+                        $stairs.removeClass('active');
+                        $stairs.eq(index).addClass('active');
+                        return false;
+                    }
+                });
+            });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            const $goods_list = $('.goods_list');
+            const $goods_list_li = $('.goods_list>li');
+            // 利用ajax请求获取接口数据
+            // console.log($goods_list)
+            $.ajax({
+                url: "http://192.168.13.24/jingdong/php/alldata.php",
+                dataType: "json"
+            }).done((data) => {
+                // console.log(data);
+                let $strLi = ''; //定义一个空字符串用于将获取的数据
+                // 遍历获取的数据
+                $.each(data, function(index, value) {
+                    let price = value.price.toString().split(".");
+                    $strLi += `
                             <li>
                             <div class="rec_goods_img">
-                                        <img src="${value.url}" alt="" width="150" height = "150" class="lazy">
+                                        <img class="lazy" data-original="${value.url}" alt="" width="150" height = "150" >
                                     </div>
                                     <p>
                                         ${value.title}
@@ -304,37 +421,38 @@ define([], function() {
                                     </section>
                             </li>`;
 
-                        // 将str写入ul
+                    // 将str写入ul
 
-                    }); //each
-                    // console.log($strLi);
-                    // $('.goods_list').html($strLi);
-                    $('.goods_list').html($strLi);
-                    // $goods_list.html(1);
-                }); //done
+                }); //each
+                // console.log($strLi);
+                // $('.goods_list').html($strLi);
+                $('.goods_list').html($strLi);
+                $(function() { //和拼接的元素放在一起。
+                    $("img.lazy").lazyload({
+                        effect: "fadeIn" //图片显示方式
+                    });
+                });
+                // $goods_list.html(1);
+            }); //done
 
-                // $(function() { //和拼接的元素放在一起。
-                //     $("img.lazy").lazyload({
-                //         effect: "fadeIn" //图片显示方式
-                //     });
-                // });
-            }(); //闭包结束
+
+
 
 
 
 
             ; //频道广场
-            ! function() {
-                $.ajax({
-                    url: "http://192.168.13.24/jingdong/php/channeldata.php",
-                    dataType: "json"
-                }).done((data) => {
-                    // console.log(data);
-                    let $strLi = ''; //定义一个空字符串用于将获取的数据
-                    // 遍历获取的数据
-                    $.each(data, function(index, value) {
-                        if (!(value.sid == 1 || value.sid == 2)) {
-                            $strLi += `
+
+            $.ajax({
+                url: "http://192.168.13.24/jingdong/php/channeldata.php",
+                dataType: "json"
+            }).done((data) => {
+                // console.log(data);
+                let $strLi = ''; //定义一个空字符串用于将获取的数据
+                // 遍历获取的数据
+                $.each(data, function(index, value) {
+                    if (!(value.sid == 1 || value.sid == 2)) {
+                        $strLi += `
                             <div class="channel_ul${value.sid} channel_ul">
                             <a href="#" class="title">
                                 <span>${value.title}</span>
@@ -349,20 +467,20 @@ define([], function() {
                                 </a>
                             </div>
                         </div>`;
-                        } else {
-                            $strLi += `
+                    } else {
+                        $strLi += `
                             <div class="channel_ul${value.sid} channel_ul">
                             <a href="#">
                                 <img src="${value.img1}" alt="">
                             </a>
                         </div>`;
-                        }
-                        // 将str写入ul
+                    }
+                    // 将str写入ul
 
-                    }); //each
-                    $('.square_info').html($strLi);
-                }); //done
-            }();
+                }); //each
+                $('.square_info').html($strLi);
+            }); //done
+
 
 
 
