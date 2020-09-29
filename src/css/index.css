@@ -136,12 +136,14 @@ body {
 }
 
 #logo {
+  position: absolute;
+  top: 0px;
+  left: 0px;
   width: 190px;
   height: 120px;
   position: absolute;
   top: 10px;
-  left: 0px;
-  position: relative;
+  left: 165px;
 }
 #logo a {
   width: 100%;
@@ -207,11 +209,17 @@ body {
   background-color: #ffd07d;
 }
 
-.search-m {
+.suspension_wrap {
   width: 1190px;
   margin: 0 auto;
+  height: 60px;
+}
+
+.search-m {
+  width: 1190px;
   position: relative;
   height: 52px;
+  margin: 0 auto;
 }
 
 .search-logo {
@@ -228,16 +236,27 @@ body {
   top: 4px;
 }
 
+@keyframes searchTop {
+  0% {
+    top: -50px;
+  }
+  to {
+    top: 0;
+  }
+}
+.search-fix {
+  animation: searchTop .5s ease-in-out;
+}
+
 .search-fix {
   position: fixed;
   z-index: 100;
   left: 0;
-  top: -60px;
+  top: 0px;
   width: 100%;
   border-bottom: 2px solid #f10214;
   background-color: #fff;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
-  animation: .5s ease-in-out;
 }
 .search-fix .search {
   top: 10px;
@@ -424,7 +443,7 @@ body {
   position: absolute;
   left: 191px;
   top: 0;
-  width: 998px;
+  width: 968px;
   min-height: 468px;
   border: 1px solid #f7f7f7;
   background-color: #fff;
@@ -432,6 +451,7 @@ body {
   display: none;
   transition: top 0.3s ease;
   z-index: 10;
+  padding: 0px 15px 0px;
 }
 
 .item {

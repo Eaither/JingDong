@@ -51,7 +51,7 @@
     position: absolute;
     left: 191px;
     top: 0;
-    width: 998px;
+    width: 968px;
     min-height: 468px;
     border: 1px solid #f7f7f7;
     background-color: #fff;
@@ -59,6 +59,7 @@
     display: none;
     transition: top 0.3s ease;
     z-index: 10;
+    padding: 0px 15px 0px;
 }
 
 .item {

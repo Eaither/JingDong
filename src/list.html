@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="./css/list.css">
     <link rel="stylesheet" href="./font/iconfont.css">
     <link rel="stylesheet" href="./css/reset.css">
-    <script src="script/require.js" data-main="script/main.js" defer async="true" id="currentpage" data-page="index_module"></script>
+    <link rel="stylesheet" href="./css/pagination.css">
+    <script src="script/require.js" data-main="script/main.js" defer async="true" id="currentpage" data-page="list_module"></script>
 
 </head>
 
@@ -65,8 +66,65 @@
 
         </div>
     </div>
-    <div class="list_rank">
+    <div class="main">
+        <div class='m_list'>
+            <div class="rank">
+                <div class="filter">
+                    <!-- 排序 -->
+                    <div class="f_line">
+                        <!-- 综合排序 -->
+                        <div class="f_sort">
+                            <a href="#" class="active">
+                                <span>综合</span>
+                                <em class="fs_arrow">
+                                    <i class="arrow"></i>
+                                </em>
 
+
+                            </a>
+                            <a href="#">
+                                <span>销量</span>
+                                <em class="fs_arrow">
+                                    <i class="arrow"></i>
+                                </em>
+
+                            </a>
+                            <a href="#" class="com">
+                                <span>评论数</span>
+                                <em class="fs_arrow">
+                                    <i class="arrow"></i>
+                                </em>
+                            </a>
+                            <a href="#">
+                                <span>新品</span>
+                                <em class="fs_arrow">
+                                    <i class="arrow" ></i>
+                                </em>
+                            </a>
+                            <a href="#" class="fs">
+                                <span>价格</span>
+                                <em class="fs_up">
+                                    <i class="arrow_top" ></i>
+                                    <i class="arrow_bottom" ></i>
+                                </em>
+
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 渲染数据 -->
+                <div class="list">
+                    <ul>
+                    </ul>
+                </div>
+                <!-- 分页 -->
+                <div class="pagelist">
+                    <div class="m-style page">
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- footer -->

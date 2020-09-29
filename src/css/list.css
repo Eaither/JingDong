@@ -97,6 +97,234 @@ body {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
+.main {
+  margin-top: 100px;
+  width: 100%;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.main .m_list {
+  width: 1190px;
+}
+.main .m_list .rank {
+  width: 100%;
+  height: 52px;
+}
+.main .filter {
+  margin-bottom: 12px;
+  height: 40px;
+}
+.main .filter .f_line {
+  height: 28px;
+  background: #F2F2F2;
+  padding: 7px 8px 5px;
+  border-bottom: none;
+  zoom: 1;
+}
+.main .filter .f_line a {
+  float: left;
+  position: relative;
+  padding: 0 9px;
+  height: 23px;
+  border: 1px solid #ccc;
+  line-height: 23px;
+  margin-right: -1px;
+  background: #FFF;
+  color: #333;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.main .filter .f_line .fs_arrow {
+  width: 7px;
+  margin-left: 5px;
+  font-style: normal;
+}
+.main .filter .f_line span {
+  vertical-align: top;
+}
+.main .filter .f_line em {
+  vertical-align: top;
+}
+.main .filter .f_line .arrow {
+  float: right;
+  height: 11px;
+  width: 7px;
+  background: url(../img/sprite-arrow.png) no-repeat 0 -100px;
+}
+.main .filter .f_line .fs_up {
+  width: 7px;
+  margin-left: 5px;
+  font-style: normal;
+  line-height: 23px;
+  color: #333;
+  float: right;
+}
+.main .filter .f_line .arrow_top {
+  display: block;
+  height: 4px;
+  background-position: -10px -100px;
+  width: 7px;
+  overflow: hidden;
+  background: url(../img/sprite-arrow.png) no-repeat;
+  background-position: -10px -100px;
+}
+.main .filter .f_line .arrow_bottom {
+  display: block;
+  height: 4px;
+  margin-top: 4px;
+  background-position: -10px -100px;
+  width: 7px;
+  overflow: hidden;
+  background: url(../img/sprite-arrow.png) no-repeat;
+  background-position: -10px -110px;
+}
+.main .filter .f_line .active {
+  background-color: #e4393c;
+  border-color: #e4393c;
+  color: white;
+  background-position: -10px -110px;
+}
+
+.list {
+  width: 1210px;
+  margin-right: -10px;
+}
+.list li {
+  float: left;
+  width: 234px;
+  height: 397px;
+  margin-right: 2px;
+  margin-bottom: 16px;
+  border: 1px solid #fff;
+}
+.list li:hover {
+  border-color: #e4393c;
+  cursor: pointer;
+}
+.list li .wrap {
+  padding: 9px 6px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.list li .p_img {
+  height: 220px;
+  width: 220px;
+}
+.list li .p_price {
+  line-height: 22px;
+  height: 22px;
+  overflow: hidden;
+  width: 100%;
+  margin-bottom: 9px;
+}
+.list li .p_price strong {
+  float: left;
+  margin-right: 10px;
+  color: #e4393c;
+  font-size: 20px;
+}
+.list li .p_price strong em {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: Verdana;
+  margin-right: -5px;
+}
+.list li .p_title {
+  margin-bottom: 8px;
+}
+.list li .p_title span {
+  display: block;
+  height: 36px;
+  line-height: 20px;
+  overflow: hidden;
+  color: #666;
+}
+.list li .p_title span:hover {
+  color: #f30213;
+}
+.list li .p_commit {
+  margin-bottom: 9px;
+  width: 100%;
+  height: 18px;
+}
+.list li .p_commit strong {
+  color: #a7a7a7;
+  font-weight: 400;
+}
+.list li .p_commit strong a {
+  color: #005aa0;
+  font-family: verdana;
+  font-weight: 700;
+}
+.list li .p_icon {
+  margin-bottom: 12px;
+  width: 100%;
+}
+.list li .p_icon span {
+  float: left;
+  display: inline-block;
+  overflow: hidden;
+  height: 16px;
+  padding: 0 2px;
+  margin-right: 3px;
+  background: #E4393C;
+  line-height: 16px;
+  text-align: center;
+  font-size: 12px;
+  font-style: normal;
+  color: #FFF;
+}
+.list li .p-operate {
+  width: 100%;
+}
+.list li .p-operate i {
+  position: absolute;
+  display: block;
+  font-style: normal;
+  left: 4px;
+  top: 3px;
+  width: 18px;
+  height: 18px;
+  background: url(../img/search.ele.png) no-repeat 9999px 9999px;
+}
+.list li .p-operate .operate {
+  float: left;
+  width: 28px;
+  height: 25px;
+  line-height: 25px;
+  border: 1px solid #DDD;
+  padding: 0 3px 0 24px;
+  position: relative;
+  background: #fff;
+  color: #999;
+}
+.list li .p-operate .operate i {
+  background-position: 0 -413px;
+}
+.list li .p-operate .cart {
+  float: left;
+  height: 25px;
+  line-height: 25px;
+  border: 1px solid #DDD;
+  padding: 0 3px 0 24px;
+  position: relative;
+  background: #fff;
+  width: 67px;
+  text-align: center;
+  color: #e4393c;
+  margin-left: -1px;
+}
+.list li .p-operate .cart i {
+  background-position: 0 -272px;
+}
+
 #footer {
   width: 100%;
   display: flex;

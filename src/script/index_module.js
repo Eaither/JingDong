@@ -1,4 +1,4 @@
-define([], function() {
+define(['jlazyload'], function() {
     return {
         init: function() {
 
@@ -11,16 +11,16 @@ define([], function() {
             });
 
 
+            // $(window).scrollTop() >= 500 ? $('.search-fix').show() : $('.search-fix').hide();
 
             $(window).on('scroll', function() {
-                if ($(window).scrollTop() > 500) {
-                    $('.search-fix').stop(true).animate({
-                        top: 0
-                    });
+                if ($(window).scrollTop() >= 500) {
+                    $('.search-logo').show()
+                    $('.suspension_wrap').addClass('search-fix');
+
                 } else {
-                    $('.search-fix').css({
-                        top: -60
-                    });
+                    $('.search-logo').hide()
+                    $('.suspension_wrap').removeClass('search-fix');
                 }
             });
 
@@ -263,7 +263,7 @@ define([], function() {
                     });
                     $.each(data, function(index, value) {
                         // alert(1);
-                        if (index < 8) {
+                        if (index < 16) {
                             $strLi += `
                             <li>
                             <a href="#">
@@ -329,6 +329,9 @@ define([], function() {
                     });
                 }); //done
             }();
+
+            // 秒杀右边
+
 
 
             // 楼梯效果
@@ -460,10 +463,10 @@ define([], function() {
                             </a>
                             <div class="channel_img">
                                 <a href="#">
-                                    <img src="${value.img1}" alt="">
+                                    <img data-original="${value.img1}" alt="" class='lazy'>
                                 </a>
                                 <a href="#">
-                                    <img src="${value.img2}" alt="">
+                                    <img data-original="${value.img2}" alt="" class='lazy'>
                                 </a>
                             </div>
                         </div>`;
@@ -471,7 +474,7 @@ define([], function() {
                         $strLi += `
                             <div class="channel_ul${value.sid} channel_ul">
                             <a href="#">
-                                <img src="${value.img1}" alt="">
+                                <img data-original="${value.img1}" alt="" class='lazy'>
                             </a>
                         </div>`;
                     }
@@ -479,6 +482,11 @@ define([], function() {
 
                 }); //each
                 $('.square_info').html($strLi);
+                $(function() { //和拼接的元素放在一起。
+                    $("img.lazy").lazyload({
+                        effect: "fadeIn" //图片显示方式
+                    });
+                });
             }); //done
 
 

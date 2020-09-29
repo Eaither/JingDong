@@ -32,7 +32,8 @@
         }
         li {
             width: 254px;
-            @include flex(row, center, center);
+            // @include flex(row, center, center);
+            display: flex;
             padding-left: 45px;
             &:nth-child(2) {
                 h5 {
