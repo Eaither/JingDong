@@ -8,7 +8,7 @@
     <title>京东-欢迎登录</title>
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/login.css">
-    <!-- <script src="script/require.js" data-main="script/main.js" defer async="true" id="currentpage" data-page="login_module"></script> -->
+    <script src="script/require.js" data-main="script/main.js" defer async="true" id="currentpage" data-page="login_module"></script>
 </head>
 
 <body>
@@ -49,65 +49,69 @@
                     </div>
 
                     <!-- 二维码 -->
-                    <div class="QR" style="display: none;">
-                        <div class="qr_code">
-                            <div class="qr_img">
-                                <img src="./img/show.png" alt="">
+                    <div class="login_index">
+                        <div class="QR">
+                            <div class="qr_code">
+                                <div class="qr_img">
+                                    <img src="./img/show.png" alt="">
+                                </div>
+                                <div class="qrcode-help">
+                                </div>
                             </div>
-                            <div class="qrcode-help">
+                            <div class="qrcode-panel">
+                                <ul>
+                                    <li class="fore1">
+                                        <span>打开</span>
+                                        <a href="#">
+                                            <span class="red">手机京东</span></a>
+                                    </li>
+                                    <li>扫描二维码</li>
+                                </ul>
                             </div>
-                        </div>
-                        <div class="qrcode-panel">
-                            <ul>
-                                <li class="fore1">
-                                    <span>打开</span>
-                                    <a href="#">
-                                        <span class="red">手机京东</span></a>
-                                </li>
-                                <li>扫描二维码</li>
-                            </ul>
-                        </div>
 
-                        <div class="qr-coagent">
-                            <ul>
-                                <li>
-                                    <b></b>
-                                    <em>免输入</em>
-                                </li>
-                                <li>
-                                    <b class="faster"></b>
-                                    <em>更快&nbsp;</em>
-                                </li>
-                                <li>
-                                    <b class="more-safe"></b>
-                                    <em>更安全</em>
-                                </li>
-                            </ul>
+                            <div class="qr-coagent">
+                                <ul>
+                                    <li>
+                                        <b></b>
+                                        <em>免输入</em>
+                                    </li>
+                                    <li>
+                                        <b class="faster"></b>
+                                        <em>更快&nbsp;</em>
+                                    </li>
+                                    <li>
+                                        <b class="more-safe"></b>
+                                        <em>更安全</em>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- 登录注册 -->
+                        <div class="login_box" style="display: none;">
+                            <form action="" method="POST">
+                                <div class="msg-wrap">
+                                    <div class="msg-error"><b></b>请输入账户名和密码</div>
+                                </div>
+                                <fieldset>
+                                    <div class="item1">
+                                        <label for="username" class="user"></label>
+                                        <input id="username" type="text" class="username" name="loginname" tabindex="1" _input="true" autocomplete="off" value="" placeholder="邮箱/用户名/登录手机">
+                                    </div>
+
+                                    <div class="item2">
+                                        <label class="login-label pwd-label" for="nloginpwd"></label>
+                                        <input type="password" name="password" class="password" tabindex="2" autocomplete="off" _input="true" placeholder="密码">
+                                    </div>
+                                    <div class="item3">
+                                        <a href="#">忘记密码</a>
+                                    </div>
+                                    <div class="item5">
+                                        <a href="javascript:;" class="login_in">登&nbsp;&nbsp;&nbsp;&nbsp;录</a>
+                                    </div>
+                                </fieldset>
+                            </form>
                         </div>
                     </div>
-                    <!-- 登录注册 -->
-                    <div class="login_box">
-                        <form action="" method="POST">
-                            <fieldset>
-                                <div class="item1">
-                                    <label for="username" class="user"></label>
-                                    <input id="username" type="text" class="usernamet" name="loginname" tabindex="1" _input="true" autocomplete="off" value="" placeholder="邮箱/用户名/登录手机">
-                                </div>
-
-                                <div class="item2">
-                                    <label class="login-label pwd-label" for="nloginpwd"></label>
-                                    <input type="password" name="password" class="password" tabindex="2" autocomplete="off" _input="true" placeholder="密码">
-                                </div>
-                                <div class="item3">
-                                    <a href="#">忘记密码</a>
-                                </div>
-                                <div class="item5">
-                                    <a href="javascript:;" class="login_in">登&nbsp;&nbsp;&nbsp;&nbsp;录</a>
-                                </div>
-                            </fieldset>
-                        </form>
-                    </div>
-
 
                     <div class="coagent">
                         <ul>
@@ -137,6 +141,46 @@
             </div>
         </div>
 
+        <div class="footer">
+            <div id="footer-2013">
+                <div class="links">
+                    <a rel="nofollow" href="#">
+                        关于我们
+                    </a> |
+                    <a rel="nofollow" href="#">
+                        联系我们
+                    </a> |
+                    <a rel="nofollow" href="#">
+                        人才招聘
+                    </a> |
+                    <a rel="nofollow" href="#">
+                        商家入驻
+                    </a> |
+                    <a rel="nofollow" href="#">
+                        广告服务
+                    </a> |
+                    <a rel="nofollow" href="#">
+                        手机京东
+                    </a> |
+                    <a href="#">
+                        友情链接
+                    </a> |
+                    <a href="#">
+                        销售联盟
+                    </a> |
+                    <a href="#">
+                        京东社区
+                    </a> |
+                    <a href="#">
+                        京东公益
+                    </a> |
+                    <a href="#">English Site</a>
+                </div>
+                <div class="copyright">
+                    Copyright&nbsp;©&nbsp;2004-2020&nbsp;&nbsp;京东JD.com&nbsp;版权所有
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 

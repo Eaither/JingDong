@@ -15,10 +15,10 @@ define(['pagination', 'jlazyload'], function() {
                 let strHtml = '<ul>';
                 $.each(data, function(index, value) {
                     strHtml += `
-                    <li>
+                    <li sid="${value.sid}">
                     <div class="wrap">
                         <div class="p_img">
-                            <img class="lazy" data-original="${value.url}" alt="" width=220 height=220>
+                            <img class="lazy" src="${value.url}" alt="" width=220 height=220>
                         </div>
                         <!-- 价格 -->
                         <div class="p_price">
@@ -67,11 +67,11 @@ define(['pagination', 'jlazyload'], function() {
                     array[index] = $(this);
                     array_default[index] = $(this);
                 });
-                $(function() { //和拼接的元素放在一起。
-                    $("img.lazy").lazyload({
-                        effect: "fadeIn" //图片显示方式
-                    });
-                });
+                // $(function() { //和拼接的元素放在一起。
+                //     $("img.lazy").lazyload({
+                //         effect: "fadeIn" //图片显示方式
+                //     });
+                // });
             });
 
 
@@ -95,7 +95,7 @@ define(['pagination', 'jlazyload'], function() {
                         let $strhtml = '<ul>';
                         $.each(data, function(index, value) {
                             $strhtml += `
-                            <li>
+                            <li sid="${value.sid}">
                             <div class="wrap">
                                 <div class="p_img">
                                     <img class="lazy" src="${value.url}" alt="" width=220 height=220>
@@ -148,16 +148,22 @@ define(['pagination', 'jlazyload'], function() {
                             array[index] = $(this);
                             array_default[index] = $(this);
                         });
-
                         // $(function() { //和拼接的元素放在一起。
                         //     $("img.lazy").lazyload({
                         //         effect: "fadeIn" //图片显示方式
                         //     });
                         // });
+
+
                     });
                 }
             });
 
+            //利用事件委托实现跳转 
+            $list.on('click', 'li', function() {
+                location.href = `detail.html?sid=${$(this).attr('sid')}`;
+                // $(this).
+            });
 
             // 排序
             let $fs_flag = false; //用于标记是否已经点击

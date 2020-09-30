@@ -5,12 +5,177 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="script/require.js" data-main="script/main.js" defer async="true" id="currentpage" data-page="index_module"></script>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/detail.css">
+    <link rel="stylesheet" href="./font/iconfont.css">
+    <script src="script/require.js" data-main="script/main.js" defer async="true" id="currentpage" data-page="detail_module"></script>
 
 </head>
 
 <body>
-    这里就是首页
+    <!-- 顶部导航栏 -->
+    <div id="top_nav">
+        <div class="w shortcut">
+            <!-- 当前城市 -->
+            <section>
+                <article>
+                    <span class="iconfont icon-dingweiweizhi
+                    "></span>
+                    <span>浙江</span>
+                </article>
+            </section>
+            <!-- 顶部导航栏 -->
+
+            <ul class="info_top">
+                <li class="login other">
+                    <!-- 登录注册 -->
+                    <a href="#">你好，请登录</a>
+                    <a href="#">免费注册</a>
+                </li>
+                <li class="line">|</li>
+                <li class="other"><a href="#">我的订单</a></li>
+                <li class="line">|</li>
+                <li class="other">
+                    <a href="#">我的京东</a>
+                    <span class="iconfont icon-jiankuohao"></span>
+                </li>
+                <li class="line">|</li>
+                <li class="other"><a href="#">京东会员</a></li>
+                <li class="line">|</li>
+                <li class="other">
+                    <a href="#">企业采购</a>
+                    <span class="iconfont icon-jiankuohao"></span>
+                </li>
+                <li class="line">|</li>
+                <li class="other">
+                    <a href="#">客户服务</a>
+                    <span class="iconfont icon-jiankuohao"></span>
+                </li>
+                <li class="line">|</li>
+                <li class="other">
+                    <a href="#">网站导航</a>
+                    <span class="iconfont icon-jiankuohao"></span>
+                </li>
+                <li class="line">|</li>
+                <li class="other">
+                    <a href="#">手机京东</a>
+                    <div class="mobile"></div>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+
+    <div class="main">
+        <div class='m_list'>
+            <div class="rank">
+            </div>
+        </div>
+    </div>
+    <div class="glass_warp">
+        <div class="glass">
+
+            <!--放大镜 -->
+            <div id="spic">
+                <img src="#" alt="" id="smallpic">
+                <div id="sf"></div>
+                <i></i>
+            </div>
+            <div id="bf">
+                <img src="#" alt="" id="bpic">
+            </div>
+            <!-- 小图列表 -->
+            <div class="spec">
+                <a href="#" class="left">
+                    <i class="left_arrow"></i>
+                </a>
+                <a href="#" class="right">
+                    <i class="right_arrow"></i>
+                </a>
+                <div class="list_wrap">
+                    <ul class="spec_list">
+                        <li>
+                            <img src="https://img11.360buyimg.com/n5/jfs/t1/86790/11/14628/209993/5e67367fEdce341b3/ac67577ec573bf03.jpg" alt="">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="preview-info">
+                <div class="pre_left">
+                    <a href="#">
+                        <i class="follow"></i>
+                        <em>关注</em>
+                    </a>
+                    <a href="#">
+                        <i class="sprite-share"></i>
+                        <em>分享</em>
+                    </a>
+                </div>
+                <div class="pre_right">
+                    <a href="#">举报</a>
+                </div>
+            </div>
+        </div>
+        <div class="info">
+            <div class="title">
+                <img src="./img/shop.png" alt=""> 罗莱家纺 LOVO乐蜗 水洗棉床上四件套纯棉床上用品套件 全棉床单被套 特丽斯 罗莱生活出品 220*240cm
+            </div>
+
+            <div class="activity-banner">
+                <div class="activity-type">
+                    <i class="sprite-seckill-yg"></i>
+                    <strong>秒杀预告</strong>
+                </div>
+                <div class="activity-price"><strong>10月09日 00:00</strong><span>秒杀价￥359.0</span></div>
+                <div class="activity-message">距离开始还剩<span>10</span>:<span>11</span>:<span>29</span></div>
+            </div>
+
+            <div class="summary">
+                <div class="sum_wrap">
+                    <div class="summary-price">
+                        <div class="dt">京 东 价</div>
+                        <div class="dd">
+                            <span class="p-price">
+                                <span>￥</span>
+                            <span class="price">399.00</span>
+                            </span>
+                            <a class="notice" href="#">降价通知
+                        </div>
+                    </div>
+                    <div class="summary-info">
+                        <div  class="comment-count" >
+                            <p class="comment">累计评价</p>
+                            <a class="counts" href="#">7万+</a>
+                        </div>
+                    </div>
+                    <div class="summary-quan">
+                        <div class="quan"></div>
+                        <div class="dt">优 惠 券</div>
+                        <div class="dd">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="cart_wrap">
+                    <div class="choose_btn">
+                        <div class="input_wrap">
+                            <input type="text" value=1>
+                            <a href="#">-</a>
+                            <a href="#">+</a>
+
+                        </div>
+                    </div>
+                    <div class="cart">加入购物车</div>
+                </div>
+
+            </div>
+        </div>
+        <div class="right">
+
+        </div>
+    </div>
+
 </body>
 
 </html>

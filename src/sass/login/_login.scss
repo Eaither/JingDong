@@ -139,10 +139,18 @@
 }
 
 .login_box {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 306px;
     height: 210px;
-    margin-top: 25px;
+    margin-top: 15px;
     padding: 0 20px 40px;
+    background-color: #fff;
+}
+
+.login_index {
+    position: relative;
 }
 
 .item1,
@@ -200,6 +208,15 @@ input {
     }
 }
 
+.tab {
+    section {
+        &:hover {
+            font-weight: 700;
+            color: #e4393c;
+        }
+    }
+}
+
 .item5 {
     @include flex(row, center, center);
     border: 1px solid #cb2a2d;
@@ -224,9 +241,11 @@ input {
 .qr_code {
     position: relative;
     height: 168px;
+    overflow: hidden;
     // margin-top: 25px;
     @include flex(row, center, center);
     .qr_img {
+        position: absolute;
         border: 1px solid #f4f4f4;
         padding: 8px;
         width: 155px;
@@ -237,13 +256,42 @@ input {
     }
     .qrcode-help {
         position: absolute;
-        right: -18px;
+        right: -144px;
         top: -2px;
         width: 141px;
         height: 168px;
         background: url(../img/phone-orange.png) no-repeat;
         z-index: 99;
-        display: none;
+        // display: none;
+    }
+}
+
+.msg-wrap {
+    // position: absolute;
+    // top: 10px;
+    min-height: 23px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    visibility: hidden;
+    .msg-error {
+        position: relative;
+        background: #ffebeb;
+        color: #e4393c;
+        border: 1px solid #faccc6;
+        padding: 3px 10px 3px 40px;
+        line-height: 15px;
+        height: auto;
+        b {
+            position: absolute;
+            top: 50%;
+            left: 10px;
+            display: block;
+            margin-top: -8px;
+            width: 16px;
+            height: 16px;
+            overflow: hidden;
+            background: url(../img/pwd-icons-new.png) -104px -49px no-repeat;
+        }
     }
 }
 
@@ -356,5 +404,26 @@ input {
         a {
             color: #b61d1d;
         }
+    }
+}
+
+.footer {
+    height: 50px;
+    width: 990px;
+    margin: 0 auto;
+    margin-top: 30px;
+    padding-bottom: 30px;
+    text-align: center;
+    .links {
+        a {
+            cursor: pointer;
+            margin: 0 10px;
+            color: #666;
+            text-decoration: none;
+            text-align: center;
+        }
+    }
+    .copyright {
+        margin: 10px 0;
     }
 }
