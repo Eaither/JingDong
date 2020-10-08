@@ -249,7 +249,7 @@ define(['jlazyload'], function() {
             // 获取后端数据
             ! function() {
                 $.ajax({
-                    url: "http://192.168.13.24/jingdong/php/alldata.php",
+                    url: "http://192.168.0.103/jingdong/php/alldata.php",
                     dataType: "json"
                 }).done((data) => {
                     let $strLi = ''; //定义一个空字符串用于将获取的数据存储
@@ -376,15 +376,164 @@ define(['jlazyload'], function() {
             });
 
 
+            $('.cart').on('click', function() {
+                location.href = 'cart.html';
+            });
+            if ($.cookie('cookieSid') && $.cookie('cookieNum')) {
+                let sid = $.cookie('cookieSid').split(',');
+                let num = $.cookie('cookieNum').split(',');
+                $('.num').html(sid.length);
+            } else {
+                $('.num').html('0');
+            }
+
+            // 每日特价tab
+            $('.tab_head').find('li').on('mouseover', function() {
+                $(this).addClass('active').siblings().removeClass('active');
+
+                $('.items').eq($(this).index()).show().siblings('.items').hide();
+            });
+            // 排行榜
+            $('.tab_top').find('li').on('mouseover', function() {
+                $(this).addClass('active').siblings().removeClass('active');
+
+                $('.rank_item').eq($(this).index()).show().siblings('.rank_item').hide();
+            });
 
 
 
+            // 发现好货
+            const $find_list = $('.find_list');
+            $.ajax({
+                url: 'http://192.168.0.103/jingdong/php/nicegoods.php',
+                dataType: 'json'
+            }).done(function(data) {
+
+                let $strLi = '';
+                $.each(data, function(index, value) {
+                    if (index % 2 !== 0) {
+                        $strLi += `
+                        <li>
+                        <div class="find_title">
+                        ${value.title}
+                        </div>
+                        <img class="lazy" src="${value.url}" alt="" width="150" height = "150">
+                        </li>
+                        `;
+                    } else {
+                        $strLi += `
+                        <li>
+                        <img class="lazy" src="${value.url}" alt="" width="150" height = "150">
+                        <div class="find_title">
+                        ${value.title}
+                        </div>
+                        </li>
+                        `;
+                    }
+                });
+                $strLi += $strLi;
+                $find_list.html($strLi);
+                // $(function() { //和拼接的元素放在一起。
+                //     $("img.lazy").lazyload({
+                //         effect: "fadeIn" //图片显示方式
+                //     });
+                // });
+
+                $find_li = $('.find_list li');
+                //单个li长度
+                let $liLen = $find_li.eq(0).width();
+                // 给ul设置宽度
+                $find_list.width($liLen * ($find_li.length / 2));
+
+                let find_num = 0;
+                let timer1 = setInterval(() => {
+                    find_num++;
+                    // console.log(find_num)
+                    if (find_num === 2000) {
+                        $find_list.css({
+                            left: 0
+                        })
+                        find_num = 0;
+                    }
+                    $find_list.css({
+                        transform: `translateX(-${find_num}px)`
+                    })
+                }, 1000 / 60);
+
+                $('.find_right').hover(() => {
+                    clearInterval(timer1)
+                }, () => {
+                    timer1 = setInterval(() => {
+                        find_num++;
+                        // console.log(find_num)
+                        if (find_num === 2000) {
+                            $find_list.css({
+                                left: 0
+                            })
+                            find_num = 0;
+                        }
+                        $find_list.css({
+                            transform: `translateX(-${find_num}px)`
+                        })
+                    }, 1000 / 60);
+                })
+            });
+
+            // hover效果
+            $tabLi = $('.tab_service li');
+            $tabLi.on('mouseover', function() {
+                $(this).find('.img1').hide();
+                $(this).find('.img2').show();
+            });
+            $tabLi.on('mouseout', function() {
+                $(this).find('.img2').hide();
+                $(this).find('.img1').show();
+            });
 
 
+            // 新品首发
 
-
-
-
+            const slider_list = $('.slider_wrap ul');
+            const slider_li = $('.lis');
+            const new_left = $('.goods_new_left');
+            const new_right = $('.goods_new_right');
+            // 给li添加索引
+            let sli_num = 0;
+            $.each(slider_li, function(index, value) {
+                sli_num = index;
+                $(value).attr('data-index', index);
+            });
+            let slider_num = parseInt($('.slider_active').attr('data-index'));
+            new_right.on('click', function() {
+                slider_num++;
+                if (slider_num === 4) {
+                    slider_list.css({
+                        transition: 'none',
+                        left: -60,
+                    })
+                    slider_num = 0
+                }
+                slider_li.eq(slider_num).addClass('slider_active').siblings().removeClass('slider_active');
+                slider_list.css({
+                    transition: '.5s ease',
+                    transform: `translateX(${-slider_num * 130}px)`
+                });
+            });
+            // new_left.on('click', function() {
+            //     slider_num--;
+            //     if (slider_num === -1) {
+            //         slider_list.css({
+            //             transition: 'none',
+            //             left: -300,
+            //         })
+            //         slider_num = 3
+            //     }
+            //     slider_li.eq(slider_num).addClass('slider_active').siblings().removeClass('slider_active');
+            //     slider_list.css({
+            //         transition: '.5s ease',
+            //         transform: `translateX(${-slider_num * 130}px)`
+            //     });
+            // });
 
 
 
@@ -394,7 +543,7 @@ define(['jlazyload'], function() {
             // 利用ajax请求获取接口数据
             // console.log($goods_list)
             $.ajax({
-                url: "http://192.168.13.24/jingdong/php/alldata.php",
+                url: "http://192.168.0.103/jingdong/php/alldata.php",
                 dataType: "json"
             }).done((data) => {
                 // console.log(data);
@@ -447,7 +596,7 @@ define(['jlazyload'], function() {
             ; //频道广场
 
             $.ajax({
-                url: "http://192.168.13.24/jingdong/php/channeldata.php",
+                url: "http://192.168.0.103/jingdong/php/channeldata.php",
                 dataType: "json"
             }).done((data) => {
                 // console.log(data);
@@ -489,10 +638,41 @@ define(['jlazyload'], function() {
                 });
             }); //done
 
+            $(window).scrollTop() < 200 ? $('.elevator').css({
+                top: $('.login_wrap').offset().top,
+            }) : $('.elevator').css({
+                position: 'fixed',
+                top: 74
+            });
+            // if ($(window).scrollTop() < 200) {
+            //     $('.elevator').stop(true).animate({
+            //         top: $('.login_wrap').offset().top
+            //     })
+            // } else {
+            //     $('.elevator').stop(true).animate({
+            //         top: 74
+            //     })
+            // }
 
+            //根据本地存储，显示用户信息
+            if (localStorage.getItem('username')) {
+                $('.log').hide();
+                $('.log2').show();
+                $('.name').html('Hi~' + localStorage.getItem('username'));
+            }
 
+            $('.bao3').on('click', function() {
+                $('.log').show();
+                $('.log2').hide();
+                localStorage.removeItem('username');
+                $('.name').html('Hi~欢迎逛京东');
+            });
 
-
+            $(function() { //和拼接的元素放在一起。
+                $("img.lazy").lazyload({
+                    effect: "fadeIn" //图片显示方式
+                });
+            });
 
 
         }

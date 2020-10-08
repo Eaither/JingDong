@@ -8,7 +8,7 @@ define(['pagination', 'jlazyload'], function() {
             const $list = $('.list');
             // 请求默认数据
             $.ajax({
-                url: "http://192.168.13.24/jingdong/php/listdata.php",
+                url: "http://192.168.1.32/jingdong/php/listdata.php",
                 dataType: 'json'
             }).done(function(data) {
                 console.log(data);
@@ -86,7 +86,7 @@ define(['pagination', 'jlazyload'], function() {
                 callback: function(api) {
                     console.log(api.getCurrent()); //获取的页码给后端
                     $.ajax({
-                        url: 'http://192.168.13.24/jingdong/php/listdata.php',
+                        url: 'http://192.168.1.32/jingdong/php/listdata.php',
                         data: {
                             page: api.getCurrent() //传输页面
                         },

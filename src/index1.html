@@ -50,8 +50,8 @@
                 <ul class="info_top">
                     <li class="login other">
                         <!-- 登录注册 -->
-                        <a href="#">你好，请登录</a>
-                        <a href="#">免费注册</a>
+                        <a href="./login.html">你好，请登录</a>
+                        <a href="./registry.html">免费注册</a>
                     </li>
                     <li class="line">|</li>
                     <li class="other"><a href="#">我的订单</a></li>
@@ -121,6 +121,7 @@
                     <div class="cart">
                         <span class="iconfont icon-SHOUYE-GOUWUCHE"></span>
                         <a target="_blank" href="#">我的购物车</a>
+                        <div class="num"></div>
                     </div>
                 </div>
 
@@ -237,7 +238,7 @@
                     </ul>
 
                     <div class="cartlist">
-                        <div class="item1"><a href="list.html">模拟跳转商品列表页</a></div>
+                        <div class="item1"><a href="list.html">列表页</a></div>
                         <div class="item1">第二块内容</div>
                         <div class="item1">第三块内容</div>
                         <div class="item1">第四块内容</div>
@@ -354,12 +355,19 @@
                         <!-- 头像 -->
                         <div class="login_wrap">
                             <a href="#" class="head_pic"><img src="./img/spring.png" alt=""></a>
-                            <aside>
-                                <p>Hi~欢迎逛京东！</p>
+                            <aside class="log">
+                                <p class="name">Hi~欢迎逛京东！</p>
                                 <p>
-                                    <!-- <sa>登录</span>|<span>注册</span> -->
-                                    <a href="#">登录</a><span>|</span>
-                                    <a href="#">注册</a>
+                                    <a href="login.html">登录</a><span>|</span>
+                                    <a href="registry.html">注册</a>
+                                </p>
+                            </aside>
+                            <aside class="log2" style="display: none;">
+                                <p class="name">Hi~欢迎逛京东</p>
+                                <p>
+                                    <a href="#" class="bao"></a>
+                                    <a href="#" class="bao1"></a>
+                                    <a href="#" class="bao3">退出</a>
                                 </p>
                             </aside>
                         </div>
@@ -403,7 +411,69 @@
 
                         </ul>
                     </section>
-                    <nav class="tab_service"></nav>
+                    <nav class="tab_service">
+                        <li>
+                            <img src="./img/1.png" alt="" class="img1">
+                            <img src="./img/2.png" alt="" class="img2" style="display: none;">
+                            <span>话费</span>
+                        </li>
+                        <li>
+                            <img src="./img/3.png" alt="" class="img1">
+                            <img src="./img/4.png" alt="" class="img2" style="display: none;">
+                            <span>机票</span>
+                        </li>
+                        <li>
+                            <img src="./img/5.png" alt="" class="img1">
+                            <img src="./img/6.png" alt="" class="img2" style="display: none;">
+                            <span>酒店</span>
+                        </li>
+                        <li>
+                            <img src="./img/7.png" alt="" class="img1">
+                            <img src="./img/8.png" alt="" class="img2" style="display: none;">
+                            <span>游戏</span>
+                        </li>
+                        <li>
+                            <img src="./img/9.png" alt="" class="img1">
+                            <img src="./img/10.png" alt="" class="img2" style="display: none;">
+                            <span>加油卡</span>
+                        </li>
+                        <li>
+                            <img src="./img/11.png" alt="" class="img1">
+                            <img src="./img/12.png" alt="" class="img2" style="display: none;">
+                            <span>火车票</span>
+                        </li>
+                        <li>
+                            <img src="./img/13.png" alt="" class="img1">
+                            <img src="./img/14.png" alt="" class="img2" style="display: none;">
+                            <span>众筹</span>
+                        </li>
+                        <li>
+                            <img src="./img/15.png" alt="" class="img1">
+                            <img src="./img/16.png" alt="" class="img2" style="display: none;">
+                            <span>理财</span>
+                        </li>
+                        <li>
+                            <img src="./img/17.png" alt="" class="img1">
+                            <img src="./img/18.png" alt="" class="img2" style="display: none;">
+                            <span>白条</span>
+                        </li>
+                        <li>
+                            <img src="./img/19.png" alt="" class="img1">
+                            <img src="./img/20.png" alt="" class="img2" style="display: none;">
+                            <span>电影票</span>
+                        </li>
+                        <li>
+                            <img src="./img/21.png" alt="" class="img1">
+                            <img src="./img/22.png" alt="" class="img2" style="display: none;">
+                            <span>企业购</span>
+                        </li>
+                        <li>
+                            <img src="./img/23.png" alt="" class="img1">
+                            <img src="./img/24.png" alt="" class="img2" style="display: none;">
+                            <span>礼品卡</span>
+                        </li>
+
+                    </nav>
                 </div>
             </div>
         </div>
@@ -472,8 +542,545 @@
 
             <!-- 特色优选 -->
             <div class="char_favor level">
-                <div class="grid_left"></div>
-                <div class="grid_right"></div>
+                <div class="grid_left">
+                    <div class="left_top">
+                        <p>每日特价</p>
+                        <i></i>
+                    </div>
+                    <div class="left_bottom">
+                        <div class="left_main">
+                            <ul class="tab_head">
+                                <li class="active">精选</li>
+                                <li>美食</li>
+                                <li>百货</li>
+                                <li>个护</li>
+                                <li>预告</li>
+                            </ul>
+
+                            <div class="tab_body">
+                                <!-- 精选 -->
+                                <div class="special_list items1 items">
+                                    <div class="special_list0">
+                                        <img src="https://img20.360buyimg.com/seckillcms/s144x144_jfs/t14332/25/1667482818/274621/774a4966/5a547f4fN26fe7d8b.jpg!q70.jpg.webp" alt="">
+                                        <div class="lowFirst">175天最低价</div>
+                                        <!-- 标题价格 -->
+                                        <div class="mes">
+                                            <span class="eight">高情商宝宝绘本8册</span>
+                                            <div class="mes-price">
+                                                <span class="now">
+                                                    <i>￥</i>
+                                                    9.9
+                                                </span>
+                                                <del class="cur">
+                                                    <i>￥</i>
+                                                    30
+                                                </del>
+                                            </div>
+                                            <p>已抢<span class="color">270</span>件</p>
+                                        </div>
+
+                                    </div>
+                                    <div class="special_list1 sp_list1">
+                                        <img src="https://img30.360buyimg.com/seckillcms/s144x144_jfs/t1/118339/23/18993/35090/5f741d1cE555ddc92/9958b0e91f0b9d8b.jpg!q70.jpg.webp" alt="">
+                                        <div class="lowFirst">189天最低价</div>
+                                        <div class="mes">
+                                            <span class="eight">Adidas阿迪达斯短袖男</span>
+                                            <div class="mes-price">
+                                                <span class="now">
+                                                    <i class="now1">￥</i>
+                                                    69
+                                                </span>
+                                                <del class="cur">
+                                                    <i class="now2">￥</i>
+                                                    85
+                                                </del>
+                                            </div>
+                                            <p>已抢<span class="color">150</span>件</p>
+                                        </div>
+                                    </div>
+                                    <div class="special_list1 sp_list2">
+                                        <img src="https://img12.360buyimg.com/seckillcms/s144x144_jfs/t1/146220/6/9266/195305/5f6dc40eEad9865a8/6e440d378a008384.jpg!q70.jpg.webp" alt="">
+                                        <div class="lowFirst">175天最低价</div>
+                                        <div class="mes">
+                                            <span class="eight">黄金转运珠 貔貅彩绳手链</span>
+                                            <div class="mes-price">
+                                                <span class="now">
+                                                    <i class="now1">￥</i>
+                                                    99
+                                                </span>
+                                                <del class="cur">
+                                                    <i class="now2">￥</i>
+                                                    238
+                                                </del>
+                                            </div>
+                                            <p>已抢<span class="color">123</span>件</p>
+                                        </div>
+                                    </div>
+                                    <div class="special_list1 sp_list3">
+                                        <img src="https://img12.360buyimg.com/seckillcms/s144x144_jfs/t1/133686/34/11294/189514/5f743ba0Ee8a7c50c/df445e3d2e5ec6da.jpg!q70.jpg.webp" alt="">
+                                        <div class="lowFirst">189天最低价</div>
+                                        <div class="mes">
+                                            <span class="eight">浪莎秋衣秋裤男保暖内衣套装</span>
+                                            <div class="mes-price">
+                                                <span class="now">
+                                                    <i class="now1">￥</i>
+                                                    49
+                                                </span>
+                                                <del class="cur">
+                                                    <i class="now2">￥</i>
+                                                    99
+                                                </del>
+                                            </div>
+                                            <p>已抢<span class="color">150</span>件</p>
+                                        </div>
+                                    </div>
+                                    <div class="special_list1 sp_list4">
+                                        <img src="https://img11.360buyimg.com/seckillcms/s144x144_jfs/t1/119465/24/16806/176312/5f68118cE62b39a70/aaac63c49b23e576.jpg!q70.jpg.webp" alt="">
+                                        <div class="lowFirst">180天最低价</div>
+                                        <div class="mes">
+                                            <span class="eight">惠夫人棉拖鞋女冬居家保暖防滑</span>
+                                            <div class="mes-price">
+                                                <span class="now">
+                                                    <i class="now1">￥</i>
+                                                    19.9
+                                                </span>
+                                                <del class="cur">
+                                                    <i class="now2">￥</i>
+                                                    45
+                                                </del>
+                                            </div>
+                                            <p>已抢<span class="color">266</span>件</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 美食 -->
+                                <div class="special_list items2 items" style='display:none;'>
+                                    <div class="special_list0">
+                                        <img src="https://img14.360buyimg.com/seckillcms/s144x144_jfs/t1/148355/11/5694/148543/5f3b38cdE5296ba61/2af3c482d4a97f5f.jpg!q70.jpg.webp" alt="">
+                                        <div class="lowFirst">175天最低价</div>
+                                        <!-- 标题价格 -->
+                                        <div class="mes">
+                                            <span class="eight">高情商宝宝绘本8册</span>
+                                            <div class="mes-price">
+                                                <span class="now">
+                                                    <i>￥</i>
+                                                    9.9
+                                                </span>
+                                                <del class="cur">
+                                                    <i>￥</i>
+                                                    30
+                                                </del>
+                                            </div>
+                                            <p>已抢<span>270</span>件</p>
+                                        </div>
+
+                                    </div>
+                                    <div class="special_list1 sp_list1">
+                                        <img src="https://img10.360buyimg.com/seckillcms/s144x144_jfs/t1/133252/11/10565/37993/5f6af148E142dd2bc/164e0958e8a4e439.jpg!q70.jpg.webp" alt="">
+                                        <div class="lowFirst">189天最低价</div>
+                                        <div class="mes">
+                                            <span class="eight">Adidas阿迪达斯短袖男</span>
+                                            <div class="mes-price">
+                                                <span class="now">
+                                                    <i class="now1">￥</i>
+                                                    69
+                                                </span>
+                                                <del class="cur">
+                                                    <i class="now2">￥</i>
+                                                    85
+                                                </del>
+                                            </div>
+                                            <p>已抢<span class="color">150</span>件</p>
+                                        </div>
+                                    </div>
+                                    <div class="special_list1 sp_list2">
+                                        <img src="https://img20.360buyimg.com/seckillcms/s144x144_jfs/t1/118502/8/17265/184938/5f5843f2Ec07395ab/998922e5d9de1bf6.jpg!q70.jpg.webp" alt="">
+                                        <div class="lowFirst">175天最低价</div>
+                                        <div class="mes">
+                                            <span class="eight">黄金转运珠 貔貅彩绳手链</span>
+                                            <div class="mes-price">
+                                                <span class="now">
+                                                    <i class="now1">￥</i>
+                                                    99
+                                                </span>
+                                                <del class="cur">
+                                                    <i class="now2">￥</i>
+                                                    238
+                                                </del>
+                                            </div>
+                                            <p>已抢<span class="color">123</span>件</p>
+                                        </div>
+                                    </div>
+                                    <div class="special_list1 sp_list3">
+                                        <img src="https://img10.360buyimg.com/seckillcms/s144x144_jfs/t1/131859/17/9704/258888/5f5b3f06E3d40fcbc/4f59411770063e43.jpg!q70.jpg.webp" alt="">
+                                        <div class="lowFirst">189天最低价</div>
+                                        <div class="mes">
+                                            <span class="eight">浪莎秋衣秋裤男保暖内衣套装</span>
+                                            <div class="mes-price">
+                                                <span class="now">
+                                                    <i class="now1">￥</i>
+                                                    49
+                                                </span>
+                                                <del class="cur">
+                                                    <i class="now2">￥</i>
+                                                    99
+                                                </del>
+                                            </div>
+                                            <p>已抢<span class="color">150</span>件</p>
+                                        </div>
+                                    </div>
+                                    <div class="special_list1 sp_list4">
+                                        <img src="https://img13.360buyimg.com/seckillcms/s144x144_jfs/t1/134153/25/1778/565719/5edf381dEa578ede5/3890cdb02375a487.jpg!q70.jpg.webp" alt="">
+                                        <div class="lowFirst">180天最低价</div>
+                                        <div class="mes">
+                                            <span class="eight">惠夫人棉拖鞋女冬居家保暖防滑</span>
+                                            <div class="mes-price">
+                                                <span class="now">
+                                                    <i class="now1">￥</i>
+                                                    19.9
+                                                </span>
+                                                <del class="cur">
+                                                    <i class="now2">￥</i>
+                                                    45
+                                                </del>
+                                            </div>
+                                            <p>已抢<span class="color">266</span>件</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 百货 -->
+                                <div class="special_list items3 items" style='display:none;'>
+                                    <div class="special_list0">
+                                        <img src="https://img20.360buyimg.com/seckillcms/s144x144_jfs/t1/4060/32/16084/475310/5be175e9E7f613dab/9abf00c4e8f2cdf2.jpg!q70.jpg.webp" alt="">
+                                        <div class="lowFirst">175天最低价</div>
+                                        <!-- 标题价格 -->
+                                        <div class="mes">
+                                            <span class="eight">高情商宝宝绘本8册</span>
+                                            <div class="mes-price">
+                                                <span class="now">
+                                                    <i>￥</i>
+                                                    9.9
+                                                </span>
+                                                <del class="cur">
+                                                    <i>￥</i>
+                                                    30
+                                                </del>
+                                            </div>
+                                            <p>已抢<span>270</span>件</p>
+                                        </div>
+
+                                    </div>
+                                    <div class="special_list1 sp_list1">
+                                        <img src="https://img30.360buyimg.com/seckillcms/s144x144_jfs/t1/118339/23/18993/35090/5f741d1cE555ddc92/9958b0e91f0b9d8b.jpg!q70.jpg.webp" alt="">
+                                        <div class="lowFirst">189天最低价</div>
+                                        <div class="mes">
+                                            <span class="eight">Adidas阿迪达斯短袖男</span>
+                                            <div class="mes-price">
+                                                <span class="now">
+                                                    <i class="now1">￥</i>
+                                                    69
+                                                </span>
+                                                <del class="cur">
+                                                    <i class="now2">￥</i>
+                                                    85
+                                                </del>
+                                            </div>
+                                            <p>已抢<span class="color">150</span>件</p>
+                                        </div>
+                                    </div>
+                                    <div class="special_list1 sp_list2">
+                                        <img src="https://img12.360buyimg.com/seckillcms/s144x144_jfs/t1/146220/6/9266/195305/5f6dc40eEad9865a8/6e440d378a008384.jpg!q70.jpg.webp" alt="">
+                                        <div class="lowFirst">175天最低价</div>
+                                        <div class="mes">
+                                            <span class="eight">黄金转运珠 貔貅彩绳手链</span>
+                                            <div class="mes-price">
+                                                <span class="now">
+                                                    <i class="now1">￥</i>
+                                                    99
+                                                </span>
+                                                <del class="cur">
+                                                    <i class="now2">￥</i>
+                                                    238
+                                                </del>
+                                            </div>
+                                            <p>已抢<span class="color">123</span>件</p>
+                                        </div>
+                                    </div>
+                                    <div class="special_list1 sp_list3">
+                                        <img src="https://img12.360buyimg.com/seckillcms/s144x144_jfs/t1/133686/34/11294/189514/5f743ba0Ee8a7c50c/df445e3d2e5ec6da.jpg!q70.jpg.webp" alt="">
+                                        <div class="lowFirst">189天最低价</div>
+                                        <div class="mes">
+                                            <span class="eight">浪莎秋衣秋裤男保暖内衣套装</span>
+                                            <div class="mes-price">
+                                                <span class="now">
+                                                    <i class="now1">￥</i>
+                                                    49
+                                                </span>
+                                                <del class="cur">
+                                                    <i class="now2">￥</i>
+                                                    99
+                                                </del>
+                                            </div>
+                                            <p>已抢<span class="color">150</span>件</p>
+                                        </div>
+                                    </div>
+                                    <div class="special_list1 sp_list4">
+                                        <img src="https://img11.360buyimg.com/seckillcms/s144x144_jfs/t1/119465/24/16806/176312/5f68118cE62b39a70/aaac63c49b23e576.jpg!q70.jpg.webp" alt="">
+                                        <div class="lowFirst">180天最低价</div>
+                                        <div class="mes">
+                                            <span class="eight">惠夫人棉拖鞋女冬居家保暖防滑</span>
+                                            <div class="mes-price">
+                                                <span class="now">
+                                                    <i class="now1">￥</i>
+                                                    19.9
+                                                </span>
+                                                <del class="cur">
+                                                    <i class="now2">￥</i>
+                                                    45
+                                                </del>
+                                            </div>
+                                            <p>已抢<span class="color">266</span>件</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 个护 -->
+                                <div class="special_list items4 items" style='display:none;'>
+                                    <div class="special_list0">
+                                        <img src="https://img11.360buyimg.com/seckillcms/s144x144_jfs/t1/56299/31/3908/52350/5d1ad157E0ceee9f7/2ce340da81913959.jpg!q70.jpg.webp" alt="">
+                                        <div class="lowFirst">175天最低价</div>
+                                        <!-- 标题价格 -->
+                                        <div class="mes">
+                                            <span class="eight">高情商宝宝绘本8册</span>
+                                            <div class="mes-price">
+                                                <span class="now">
+                                                    <i>￥</i>
+                                                    9.9
+                                                </span>
+                                                <del class="cur">
+                                                    <i>￥</i>
+                                                    30
+                                                </del>
+                                            </div>
+                                            <p>已抢<span>270</span>件</p>
+                                        </div>
+
+                                    </div>
+                                    <div class="special_list1 sp_list1">
+                                        <img src="https://img30.360buyimg.com/seckillcms/s144x144_jfs/t1/118339/23/18993/35090/5f741d1cE555ddc92/9958b0e91f0b9d8b.jpg!q70.jpg.webp" alt="">
+                                        <div class="lowFirst">189天最低价</div>
+                                        <div class="mes">
+                                            <span class="eight">Adidas阿迪达斯短袖男</span>
+                                            <div class="mes-price">
+                                                <span class="now">
+                                                    <i class="now1">￥</i>
+                                                    69
+                                                </span>
+                                                <del class="cur">
+                                                    <i class="now2">￥</i>
+                                                    85
+                                                </del>
+                                            </div>
+                                            <p>已抢<span class="color">150</span>件</p>
+                                        </div>
+                                    </div>
+                                    <div class="special_list1 sp_list2">
+                                        <img src="https://img12.360buyimg.com/seckillcms/s144x144_jfs/t1/146220/6/9266/195305/5f6dc40eEad9865a8/6e440d378a008384.jpg!q70.jpg.webp" alt="">
+                                        <div class="lowFirst">175天最低价</div>
+                                        <div class="mes">
+                                            <span class="eight">黄金转运珠 貔貅彩绳手链</span>
+                                            <div class="mes-price">
+                                                <span class="now">
+                                                    <i class="now1">￥</i>
+                                                    99
+                                                </span>
+                                                <del class="cur">
+                                                    <i class="now2">￥</i>
+                                                    238
+                                                </del>
+                                            </div>
+                                            <p>已抢<span class="color">123</span>件</p>
+                                        </div>
+                                    </div>
+                                    <div class="special_list1 sp_list3">
+                                        <img src="https://img12.360buyimg.com/seckillcms/s144x144_jfs/t1/133686/34/11294/189514/5f743ba0Ee8a7c50c/df445e3d2e5ec6da.jpg!q70.jpg.webp" alt="">
+                                        <div class="lowFirst">189天最低价</div>
+                                        <div class="mes">
+                                            <span class="eight">浪莎秋衣秋裤男保暖内衣套装</span>
+                                            <div class="mes-price">
+                                                <span class="now">
+                                                    <i class="now1">￥</i>
+                                                    49
+                                                </span>
+                                                <del class="cur">
+                                                    <i class="now2">￥</i>
+                                                    99
+                                                </del>
+                                            </div>
+                                            <p>已抢<span class="color">150</span>件</p>
+                                        </div>
+                                    </div>
+                                    <div class="special_list1 sp_list4">
+                                        <img src="https://img11.360buyimg.com/seckillcms/s144x144_jfs/t1/119465/24/16806/176312/5f68118cE62b39a70/aaac63c49b23e576.jpg!q70.jpg.webp" alt="">
+                                        <div class="lowFirst">180天最低价</div>
+                                        <div class="mes">
+                                            <span class="eight">惠夫人棉拖鞋女冬居家保暖防滑</span>
+                                            <div class="mes-price">
+                                                <span class="now">
+                                                    <i class="now1">￥</i>
+                                                    19.9
+                                                </span>
+                                                <del class="cur">
+                                                    <i class="now2">￥</i>
+                                                    45
+                                                </del>
+                                            </div>
+                                            <p>已抢<span class="color">266</span>件</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 预告 -->
+                                <div class="special_list items5 items" style='display:none;'>
+                                    <div class="special_list0">
+                                        <img src="https://img11.360buyimg.com/seckillcms/s144x144_jfs/t1/125014/26/13701/92064/5f6f3c14E86265768/8656e7a8206b134b.png!q70.jpg.webp" alt="">
+                                        <div class="lowFirst">175天最低价</div>
+                                        <!-- 标题价格 -->
+                                        <div class="mes">
+                                            <span class="eight">高情商宝宝绘本8册</span>
+                                            <div class="mes-price">
+                                                <span class="now">
+                                                    <i>￥</i>
+                                                    9.9
+                                                </span>
+                                                <del class="cur">
+                                                    <i>￥</i>
+                                                    30
+                                                </del>
+                                            </div>
+                                            <p>已抢<span>270</span>件</p>
+                                        </div>
+
+                                    </div>
+                                    <div class="special_list1 sp_list1">
+                                        <img src="https://img11.360buyimg.com/seckillcms/s144x144_jfs/t1/133155/12/11192/62245/5f731348Ee50040ba/3dd777101841f988.jpg!q70.jpg.webp" alt="">
+                                        <div class="lowFirst">189天最低价</div>
+                                        <div class="mes">
+                                            <span class="eight">Adidas阿迪达斯短袖男</span>
+                                            <div class="mes-price">
+                                                <span class="now">
+                                                    <i class="now1">￥</i>
+                                                    69
+                                                </span>
+                                                <del class="cur">
+                                                    <i class="now2">￥</i>
+                                                    85
+                                                </del>
+                                            </div>
+                                            <p>已抢<span class="color">150</span>件</p>
+                                        </div>
+                                    </div>
+                                    <div class="special_list1 sp_list2">
+                                        <img src="https://img12.360buyimg.com/seckillcms/s144x144_jfs/t1/146220/6/9266/195305/5f6dc40eEad9865a8/6e440d378a008384.jpg!q70.jpg.webp" alt="">
+                                        <div class="lowFirst">175天最低价</div>
+                                        <div class="mes">
+                                            <span class="eight">黄金转运珠 貔貅彩绳手链</span>
+                                            <div class="mes-price">
+                                                <span class="now">
+                                                    <i class="now1">￥</i>
+                                                    99
+                                                </span>
+                                                <del class="cur">
+                                                    <i class="now2">￥</i>
+                                                    238
+                                                </del>
+                                            </div>
+                                            <p>已抢<span class="color">123</span>件</p>
+                                        </div>
+                                    </div>
+                                    <div class="special_list1 sp_list3">
+                                        <img src="https://img12.360buyimg.com/seckillcms/s144x144_jfs/t1/133686/34/11294/189514/5f743ba0Ee8a7c50c/df445e3d2e5ec6da.jpg!q70.jpg.webp" alt="">
+                                        <div class="lowFirst">189天最低价</div>
+                                        <div class="mes">
+                                            <span class="eight">浪莎秋衣秋裤男保暖内衣套装</span>
+                                            <div class="mes-price">
+                                                <span class="now">
+                                                    <i class="now1">￥</i>
+                                                    49
+                                                </span>
+                                                <del class="cur">
+                                                    <i class="now2">￥</i>
+                                                    99
+                                                </del>
+                                            </div>
+                                            <p>已抢<span class="color">150</span>件</p>
+                                        </div>
+                                    </div>
+                                    <div class="special_list1 sp_list4">
+                                        <img src="https://img11.360buyimg.com/seckillcms/s144x144_jfs/t1/119465/24/16806/176312/5f68118cE62b39a70/aaac63c49b23e576.jpg!q70.jpg.webp" alt="">
+                                        <div class="lowFirst">180天最低价</div>
+                                        <div class="mes">
+                                            <span class="eight">惠夫人棉拖鞋女冬居家保暖防滑</span>
+                                            <div class="mes-price">
+                                                <span class="now">
+                                                    <i class="now1">￥</i>
+                                                    19.9
+                                                </span>
+                                                <del class="cur">
+                                                    <i class="now2">￥</i>
+                                                    45
+                                                </del>
+                                            </div>
+                                            <p>已抢<span class="color">266</span>件</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid_right">
+                    <div class="left_top">
+                        <p>品牌闪购</p>
+                        <i></i>
+                    </div>
+                    <div class="left_bottom">
+                        <div class="core">
+                            <img src="https://img13.360buyimg.com/seckillcms/s140x70_jfs/t1/112765/9/18936/10853/5f72eb6aEc48cc0dc/268614cc7932e1a1.png!cc_70x35.webp" alt="" class="img1" class="lazy">
+                            <h6 class="core_name">尊范家居精选闪购</h6>
+                            <div class="des">
+                                <span>爆品直降千元</span>|
+                                <span>仅剩<strong class="day">2</strong>天</span>
+                            </div>
+                            <img src="https://img13.360buyimg.com/seckillcms/s780x780_jfs/t1/123406/28/13789/341350/5f73f4c6E0f2c0e37/f5c1548127c5700c.jpg!cc_130x130.webp" alt="" class="img2" class="lazy">
+                        </div>
+                        <ul>
+                            <li>
+                                <img src="./img/1.webp" alt="" class="lazy">
+                                <h6>莉翠行银茶器专场</h6>
+                            </li>
+                            <li>
+                                <img src="https://img12.360buyimg.com/seckillcms/s600x300_jfs/t1/138518/11/9012/12102/5f6aebd0E9a396b78/145ca4f43d52dde7.png!cc_300x150.webp" alt="" class="lazy">
+                                <h6>米高轮滑大牌闪购</h6>
+                            </li>
+                            <li>
+                                <img src="https://img11.360buyimg.com/seckillcms/s600x300_jfs/t1/142701/7/9661/23360/5f72d5efE54a834c5/eb19a299225c7752.png!cc_300x150.webp" alt="" class="lazy">
+                                <h6>钻石金秋焕新潮</h6>
+                            </li>
+                            <li>
+                                <img src="https://img30.360buyimg.com/seckillcms/s600x300_jfs/t1/113831/14/18913/9942/5f73d4bbE2c6b885a/eb1eee806ef1ee87.png!cc_300x150.webp" alt="" class="lazy">
+                                <h6>大牌相机镜头专场</h6>
+                            </li>
+                            <li>
+                                <img src="https://img20.360buyimg.com/seckillcms/s600x300_jfs/t1/136064/10/10978/19098/5f7194edE6be8523b/396a46a54bea4cdd.jpg!cc_300x150.webp" alt="" class="lazy">
+                                <h6>大牌眼镜专场</h6>
+                            </li>
+                            <li>
+                                <img src="https://img30.360buyimg.com/seckillcms/s600x300_jfs/t1/124753/30/13390/6577/5f6d9f60E0ab4e8ae/1ddc8529c617316b.png!cc_300x150.webp" alt="" class="lazy">
+                                <h6>金铁图书闪购专场</h6>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
             </div>
             <!-- 发现好货 -->
             <div class="find_goods">
@@ -486,14 +1093,342 @@
                     </div>
 
                 </a>
-                <div class="find_right"></div>
+                <div class="find_right">
+                    <ul class="find_list">
+
+                    </ul>
+                    <div class="scroll-bar"><span class="scroll-points"></span></div>
+                </div>
             </div>
             <!-- 新品首发 -->
             <div class="new_goods">
-                <div class="newArrival new"></div>
-                <div class="ranking new"></div>
-                <div class="nice-shop new"></div>
-                <div class="coupon new"></div>
+                <div class="newArrival new">
+                    <div class="left_top">
+                        <p>新品首发</p>
+                        <i></i>
+                    </div>
+                    <div class="left_bottom">
+                        <div class="slider_wrap">
+                            <ul>
+                                <li>
+                                    <div class="sli_img">
+                                        <img src="https://img30.360buyimg.com/babel/s240x240_jfs/t1/127108/10/6438/152491/5f027aebE47b03a85/13a23f93216d96c9.jpg!cc_120x120.webp" alt="">
+                                    </div>
+                                    <div class="item_msg">
+                                        <p class="item_name">云米 VIOMI 600加仑智能净水器家用直饮RO反渗透无桶净水机 小米白净水器S2 600G MR632-D</p>
+                                        <p class="item_desc">来这里发现更多新品</p>
+                                        <p class="newArrival_item_price"><span class="dollar_txt">￥</span>1549.00<span style="font-size: 16px;">起</span></p>
+                                    </div>
+                                    <div class="item_new">NEW</div>
+                                </li>
+                                <li class="slider_active lis">
+                                    <div class="sli_img">
+                                        <img src="https://img20.360buyimg.com/babel/s240x240_jfs/t1/109705/12/6885/108810/5e548ed2Eb296fa52/6250131aeadb5c7f.jpg!cc_120x120.webp" alt="">
+                                    </div>
+                                    <div class="item_msg">
+                                        <p class="item_name">三星 Galaxy Z Flip（SM-F7000） 超感官灵动折叠屏 8GB+256GB 潘多拉紫</p>
+                                        <p class="item_desc">三星折叠屏手机</p>
+                                        <p class="newArrival_item_price"><span class="dollar_txt">￥</span>11999.00<span style="font-size: 16px;">起</span></p>
+                                    </div>
+                                    <div class="item_new">NEW</div>
+                                </li>
+                                <li class="lis">
+                                    <div class="sli_img">
+                                        <img src="https://img14.360buyimg.com/babel/s240x240_jfs/t1/127816/35/6549/255036/5f042986E2b70bc6c/af9f4ee8aca2c2b7.jpg!cc_120x120.webp" alt="">
+                                    </div>
+                                    <div class="item_msg">
+                                        <p class="item_name">360儿童电话手表9X 智能语音问答定位支付手表 4G全网通20米游泳级防水视频通话拍照手表男女孩星空蓝</p>
+                                        <p class="item_desc">来这里发现更多新品</p>
+                                        <p class="newArrival_item_price"><span class="dollar_txt">￥</span>499.00<span style="font-size: 16px;">起</span></p>
+                                    </div>
+                                    <div class="item_new">NEW</div>
+                                </li>
+                                <li class="lis">
+                                    <div class="sli_img">
+                                        <img src="https://img30.360buyimg.com/babel/s240x240_jfs/t1/127108/10/6438/152491/5f027aebE47b03a85/13a23f93216d96c9.jpg!cc_120x120.webp" alt="">
+                                    </div>
+                                    <div class="item_msg">
+                                        <p class="item_name">云米 VIOMI 600加仑智能净水器家用直饮RO反渗透无桶净水机 小米白净水器S2 600G MR632-D</p>
+                                        <p class="item_desc">来这里发现更多新品</p>
+                                        <p class="newArrival_item_price"><span class="dollar_txt">￥</span>1549.00<span style="font-size: 16px;">起</span></p>
+                                    </div>
+                                    <div class="item_new">NEW</div>
+                                </li>
+                                <li class="lis">
+                                    <div class="sli_img">
+                                        <img src="https://img20.360buyimg.com/babel/s240x240_jfs/t1/109705/12/6885/108810/5e548ed2Eb296fa52/6250131aeadb5c7f.jpg!cc_120x120.webp" alt="">
+                                    </div>
+                                    <div class="item_msg">
+                                        <p class="item_name">三星 Galaxy Z Flip（SM-F7000） 超感官灵动折叠屏 8GB+256GB 潘多拉紫</p>
+                                        <p class="item_desc">三星折叠屏手机</p>
+                                        <p class="newArrival_item_price"><span class="dollar_txt">￥</span>11999.00<span style="font-size: 16px;">起</span></p>
+                                    </div>
+                                    <div class="item_new">NEW</div>
+                                </li>
+                                <li class="lis">
+                                    <div class="sli_img">
+                                        <img src="https://img14.360buyimg.com/babel/s240x240_jfs/t1/127816/35/6549/255036/5f042986E2b70bc6c/af9f4ee8aca2c2b7.jpg!cc_120x120.webp" alt="">
+                                    </div>
+                                    <div class="item_msg">
+                                        <p class="item_name">360儿童电话手表9X 智能语音问答定位支付手表 4G全网通20米游泳级防水视频通话拍照手表男女孩星空蓝</p>
+                                        <p class="item_desc">来这里发现更多新品</p>
+                                        <p class="newArrival_item_price"><span class="dollar_txt">￥</span>499.00<span style="font-size: 16px;">起</span></p>
+                                    </div>
+                                    <div class="item_new">NEW</div>
+                                </li>
+                                <li class="lis">
+                                    <div class="sli_img">
+                                        <img src="https://img30.360buyimg.com/babel/s240x240_jfs/t1/127108/10/6438/152491/5f027aebE47b03a85/13a23f93216d96c9.jpg!cc_120x120.webp" alt="">
+                                    </div>
+                                    <div class="item_msg">
+                                        <p class="item_name">云米 VIOMI 600加仑智能净水器家用直饮RO反渗透无桶净水机 小米白净水器S2 600G MR632-D</p>
+                                        <p class="item_desc">来这里发现更多新品</p>
+                                        <p class="newArrival_item_price"><span class="dollar_txt">￥</span>1549.00<span style="font-size: 16px;">起</span></p>
+                                    </div>
+                                    <div class="item_new">NEW</div>
+                                </li>
+                            </ul>
+
+
+                        </div>
+                        <button class="goods_new_left">
+                            <span class="iconfont icon-right
+                            "></span>
+                        </button>
+                        <button class="goods_new_right">
+                            <span class="iconfont icon-icon-jiankuohaobaise
+                            "></span>
+                        </button>
+                    </div>
+                </div>
+                <div class="ranking new">
+                    <div class="left_top">
+                        <p>排行榜</p>
+                        <i></i>
+                    </div>
+                    <div class="left_bottom">
+                        <div class="tab_top">
+                            <ul>
+                                <li class="active">手机</li>
+                                <li>厨房小电</li>
+                                <li>面部护肤</li>
+                                <li>运动鞋包</li>
+                            </ul>
+
+                            <div class="rank_item">
+                                <div class="r_item">
+                                    <div class="r_back">
+                                        <span class="rank_top">TOP</span>
+                                        <span class="rank_num">01</span>
+                                    </div>
+                                    <img src="https://img12.360buyimg.com/mobilecms/s200x200_jfs/t1/52252/35/10516/124064/5d7808e0E46202391/7100f3733a1c1f00.jpg!q90.webp" alt="">
+                                    <span class="r_title">Apple iPhone 11 (A2223) 128GB 白色 移动联通电信4G手机 双卡双待</span>
+                                </div>
+                                <div class="r_item">
+                                    <div class="r_back r_back2">
+                                        <span class="rank_top">TOP</span>
+                                        <span class="rank_num">02</span>
+                                    </div>
+                                    <img src="https://img14.360buyimg.com/mobilecms/s140x140_jfs/t1/59022/28/10293/141808/5d78088fEf6e7862d/68836f52ffaaad96.jpg!q90.webp" alt="">
+                                    <span class="r_title">Apple iPhone 11 (A2223) 128GB 黑色 移动联通电信4G手机 双卡双待</span>
+                                </div>
+                                <div class="r_item">
+                                    <div class="r_back r_back3">
+                                        <span class="rank_top">TOP</span>
+                                        <span class="rank_num">03</span>
+                                    </div>
+                                    <img src="https://img14.360buyimg.com/mobilecms/s140x140_jfs/t1/140479/28/1769/154766/5efa9117E4d1e14e8/2ac5b453ad7cfb4b.jpg!q90.webp" alt="">
+                                    <span class="r_title">Apple iPhone 11 (A2223) 128GB 紫色 移动联通电信4G手机 双卡双待</span>
+                                </div>
+
+
+
+                            </div>
+                            <div class="rank_item" style="display: none;">
+                                <div class="r_item">
+                                    <div class="r_back">
+                                        <span class="rank_top">TOP</span>
+                                        <span class="rank_num">01</span>
+                                    </div>
+                                    <img src="https://img11.360buyimg.com/mobilecms/s200x200_jfs/t20503/186/2458533163/101960/71fcfe06/5b56ddcaNfa469fcd.jpg!q90.webp" alt="">
+                                    <span class="r_title">美的（Midea）M1-L213B 21升 快捷微波炉 家用小型迷你 360°转盘加热 旋钮操控 精准控温 五档火力 易洁内胆</span>
+                                </div>
+                                <div class="r_item">
+                                    <div class="r_back r_back2">
+                                        <span class="rank_top">TOP</span>
+                                        <span class="rank_num">02</span>
+                                    </div>
+                                    <img src="https://img30.360buyimg.com/mobilecms/s140x140_jfs/t1/136732/3/9546/127736/5f5b48cfEd5f94c6b/009d0da298e75c70.jpg!q90.webp" alt="">
+                                    <span class="r_title">美的（Midea）电磁炉 滑控调节 微晶面板   一键爆炒 定时功能 【赠炒锅+汤锅】C21-WK2102（WK2102/WH2202）</span>
+                                </div>
+                                <div class="r_item">
+                                    <div class="r_back r_back3">
+                                        <span class="rank_top">TOP</span>
+                                        <span class="rank_num">03</span>
+                                    </div>
+                                    <img src="https://img20.360buyimg.com/mobilecms/s140x140_jfs/t1/139164/26/9946/141718/5f7678bcEb28f87e4/417042d8c751077b.jpg!q90.webp" alt="">
+                                    <span class="r_title">苏泊尔（SUPOR）电饭煲电饭锅家用4L容量微压力焖煮智能电饭煲CFXB40FC829D-75（24小时预约）</span>
+                                </div>
+
+
+
+                            </div>
+                            <div class="rank_item" style="display: none;">
+                                <div class="r_item">
+                                    <div class="r_back">
+                                        <span class="rank_top">TOP</span>
+                                        <span class="rank_num">01</span>
+                                    </div>
+                                    <img src="https://img12.360buyimg.com/mobilecms/s200x200_jfs/t1/52252/35/10516/124064/5d7808e0E46202391/7100f3733a1c1f00.jpg!q90.webp" alt="">
+                                    <span class="r_title">Apple iPhone 11 (A2223) 128GB 白色 移动联通电信4G手机 双卡双待</span>
+                                </div>
+                                <div class="r_item">
+                                    <div class="r_back r_back2">
+                                        <span class="rank_top">TOP</span>
+                                        <span class="rank_num">02</span>
+                                    </div>
+                                    <img src="https://img14.360buyimg.com/mobilecms/s140x140_jfs/t1/59022/28/10293/141808/5d78088fEf6e7862d/68836f52ffaaad96.jpg!q90.webp" alt="">
+                                    <span class="r_title">Apple iPhone 11 (A2223) 128GB 黑色 移动联通电信4G手机 双卡双待</span>
+                                </div>
+                                <div class="r_item">
+                                    <div class="r_back r_back3">
+                                        <span class="rank_top">TOP</span>
+                                        <span class="rank_num">03</span>
+                                    </div>
+                                    <img src="https://img14.360buyimg.com/mobilecms/s140x140_jfs/t1/140479/28/1769/154766/5efa9117E4d1e14e8/2ac5b453ad7cfb4b.jpg!q90.webp" alt="">
+                                    <span class="r_title">Apple iPhone 11 (A2223) 128GB 紫色 移动联通电信4G手机 双卡双待</span>
+                                </div>
+
+
+
+                            </div>
+                            <div class="rank_item" style="display: none;">
+                                <div class="r_item">
+                                    <div class="r_back">
+                                        <span class="rank_top">TOP</span>
+                                        <span class="rank_num">01</span>
+                                    </div>
+                                    <img src="https://img10.360buyimg.com/mobilecms/s200x200_jfs/t1/150171/5/9847/200448/5f783bceE30e7776e/d35967d099fdb4f2.jpg!q90.webp" alt="">
+                                    <span class="r_title">Apple iPhone 11 (A2223) 128GB 白色 移动联通电信4G手机 双卡双待</span>
+                                </div>
+                                <div class="r_item">
+                                    <div class="r_back r_back2">
+                                        <span class="rank_top">TOP</span>
+                                        <span class="rank_num">02</span>
+                                    </div>
+                                    <img src="https://img14.360buyimg.com/mobilecms/s140x140_jfs/t1/59022/28/10293/141808/5d78088fEf6e7862d/68836f52ffaaad96.jpg!q90.webp" alt="">
+                                    <span class="r_title">Apple iPhone 11 (A2223) 128GB 黑色 移动联通电信4G手机 双卡双待</span>
+                                </div>
+                                <div class="r_item">
+                                    <div class="r_back r_back3">
+                                        <span class="rank_top">TOP</span>
+                                        <span class="rank_num">03</span>
+                                    </div>
+                                    <img src="https://img14.360buyimg.com/mobilecms/s140x140_jfs/t1/140479/28/1769/154766/5efa9117E4d1e14e8/2ac5b453ad7cfb4b.jpg!q90.webp" alt="">
+                                    <span class="r_title">Apple iPhone 11 (A2223) 128GB 紫色 移动联通电信4G手机 双卡双待</span>
+                                </div>
+
+
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="nice-shop new">
+                    <div class="left_top">
+                        <p>逛好店</p>
+                        <i></i>
+                    </div>
+                    <div class="left_bottom">
+                        <div class="nice_item">
+                            <div class="nic_left">
+                                <div class="nic_title">三生花京东自营官方旗舰店</div>
+                                <div class="nic_tag">
+                                    <span class="origin">自营</span>
+                                    <span class="theme">美颜出境</span>
+                                </div>
+
+                            </div>
+                            <div class="nic_commit">144.5万人关注</div>
+                            <img src="https://img12.360buyimg.com/mobilecms/s200x200_jfs/t1/145560/6/10054/177881/5f792d77E940c584e/6bef134a475cddbf.jpg.webp" alt="">
+                        </div>
+                        <div class="nice_item">
+                            <div class="nic_left">
+                                <div class="nic_title">美的集团官方旗舰店</div>
+                                <div class="nic_tag">
+                                    <!-- <span class="origin">自营</span> -->
+                                    <span class="theme">家电集结</span>
+                                </div>
+
+                            </div>
+                            <div class="nic_commit">79.3万人关注</div>
+                            <img src="https://img13.360buyimg.com/mobilecms/s200x200_jfs/t1/113625/9/6879/142323/5ebe02dcEb8d7740b/b23be4ed2a97209d.jpg.webp" alt="">
+                        </div>
+
+                    </div>
+                </div>
+                <div class="coupon new">
+                    <div class="left_top">
+                        <p>领卷中心</p>
+                        <i></i>
+                    </div>
+                    <div class="left_bottom">
+                        <div class="coupon_item">
+                            <div class="cou_wrap">
+                                <div class="img_wrap">
+                                    <img src="https://img12.360buyimg.com/common/s100x100_jfs/t1/118670/6/19316/187104/5f79ed46E70d0564d/208a3bc48b1c819f.jpg!cc_50x50.webp" alt="">
+                                </div>
+
+                                <div class="coupon_info">
+                                    <div class="mod_price coupon_price"><i>¥</i><span>100</span></div>
+                                    <div class="coupon_limit">满125元可用</div>
+                                    <div class="coupon_desc">限购 [乔丹官方旗舰店] 店铺部分商品</div>
+                                </div>
+                            </div>
+                            <div class="coupon_more">
+                                <div class="more_inner">更多好券</div>
+                                <div class="more_arrow">&gt;</div>
+                            </div>
+                        </div>
+                        <div class="coupon_item">
+                            <div class="cou_wrap">
+                                <div class="img_wrap">
+                                    <img src="https://img14.360buyimg.com/common/s100x100_jfs/t1/139091/26/7299/85130/5f4cd56dE5e0aa94c/3ea3fb7d1abbaf9b.jpg!cc_50x50.webp" alt="">
+                                </div>
+
+                                <div class="coupon_info">
+                                    <div class="mod_price coupon_price"><i>¥</i><span>50</span></div>
+                                    <div class="coupon_limit">满51元可用</div>
+                                    <div class="coupon_desc">仅可购买自营冰洗部分商品</div>
+                                </div>
+                            </div>
+                            <div class="coupon_more">
+                                <div class="more_inner">更多好券</div>
+                                <div class="more_arrow">&gt;</div>
+                            </div>
+                        </div>
+                        <div class="coupon_item">
+                            <div class="cou_wrap">
+                                <div class="img_wrap">
+                                    <img src="https://img12.360buyimg.com/common/s100x100_jfs/t1/124634/2/7763/58973/5f17d646Ef4bc5b8e/52bfe5c392cecfce.jpg!cc_50x50.webp" alt="">
+                                </div>
+
+                                <div class="coupon_info">
+                                    <div class="mod_price coupon_price"><i>¥</i><span>10</span></div>
+                                    <div class="coupon_limit">满20元可用</div>
+                                    <div class="coupon_desc">仅可购买电脑数码及办公部分商品</div>
+                                </div>
+                            </div>
+                            <div class="coupon_more">
+                                <div class="more_inner">更多好券</div>
+                                <div class="more_arrow">&gt;</div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
             </div>
             <!-- 频道广场 -->
             <div class="channel level">
@@ -707,10 +1642,6 @@
                 </div>
             </div>
         </div>
-
-        <!-- 顶部悬浮 -->
-
-
 
 
         <!-- 楼梯 -->

@@ -67,6 +67,20 @@
     display: none;
 }
 
+.item1 {
+    a {
+        display: block;
+        padding-top: 20px;
+        // margin-top: 20px;
+        font-size: 14px;
+    }
+}
+
+.item1:hover a {
+    color: #e1251b;
+    text-decoration: underline;
+}
+
 
 /* 中间轮播图 */
 
@@ -195,6 +209,14 @@
     display: none;
 }
 
+.goods_new_left {
+    @extend .goods_ban_left;
+}
+
+.goods_new_right {
+    @extend .goods_ban_right;
+}
+
 
 /* 中间轮播图右边 */
 
@@ -258,6 +280,36 @@
                 font-size: 12px;
                 a {
                     margin-right: 3px;
+                }
+                p {
+                    margin-bottom: 5px;
+                }
+                .bao {
+                    display: inline-block;
+                    position: relative;
+                    width: 20px;
+                    height: 20px;
+                    margin-right: 4px;
+                    background-position: -111px -21px;
+                    background-repeat: no-repeat;
+                    background-size: 168px 133px;
+                    background-image: url(../img/biao.png);
+                    vertical-align: middle;
+                }
+                .bao1 {
+                    display: inline-block;
+                    position: relative;
+                    width: 20px;
+                    height: 20px;
+                    margin-right: 4px;
+                    background-position: -111px -46px;
+                    background-repeat: no-repeat;
+                    background-size: 168px 133px;
+                    background-image: url(../img/biao.png);
+                    vertical-align: middle;
+                }
+                .bao3 {
+                    vertical-align: middle;
                 }
             }
             .new_plus {
@@ -342,8 +394,9 @@
     }
     /* 图标tab */
     .tab_service {
-        height: 238px;
+        height: 225px;
         position: relative;
+        padding-top: 5px;
         &:before {
             position: absolute;
             height: 1px;
@@ -352,6 +405,27 @@
             background: linear-gradient(270deg, white, #eeeeee, #eeeeee, white);
             content: " ";
             top: 0;
+        }
+        li {
+            position: relative;
+            float: left;
+            width: 63px;
+            height: 55px;
+            background: #fff;
+            text-align: center;
+            img {
+                width: 28px;
+                height: 28px;
+                margin: 0 auto;
+            }
+            span {
+                display: block;
+                height: 25px;
+                line-height: 25px;
+                border-bottom: 2px solid #fff;
+                color: #333;
+                transition: color .15s ease;
+            }
         }
     }
 }

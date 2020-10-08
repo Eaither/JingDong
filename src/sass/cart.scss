@@ -1,0 +1,64 @@
+@charset "utf-8";
+//宽高
+@mixin mySize($width, $height:$width) {
+    width: $width;
+    height: $height;
+}
+
+@mixin positionLeft ($left, $top) {
+    position: absolute;
+    top: $top;
+    left: $left;
+}
+
+@mixin positionRight ($right, $bottom) {
+    position: absolute;
+    bottom: $bottom;
+    right: $right;
+}
+
+@mixin ellipsis() {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+@mixin flex($column, $m_axis, $c_axis) {
+    display: flex;
+    flex-direction: $column;
+    justify-content: $m_axis;
+    align-items: $c_axis;
+}
+
+// * {
+//     margin: 0;
+//     padding: 0;
+// }
+// 内层宽
+.w {
+    width: 1190px;
+    margin: auto;
+}
+
+// a标签
+a {
+    color: #999;
+    text-decoration: none;
+}
+
+img {
+    display: block;
+}
+
+// li {
+//     list-style: none;
+// }
+body {
+    background-color: #f4f4f4;
+}
+
+.main_container {
+    @include flex(column, center, center);
+}
+
+@import "./cart/cart";

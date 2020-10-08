@@ -43,7 +43,7 @@ define(['sha1', 'jcookie'], function() {
                 });
                 $.ajax({
                     type: 'post',
-                    url: 'http://192.168.13.24/jingdong/php/login.php',
+                    url: 'http://192.168.1.32/jingdong/php/login.php',
                     data: {
                         user: $('.username').val(),
                         pass: hex_sha1($('.password').val())
@@ -52,10 +52,7 @@ define(['sha1', 'jcookie'], function() {
                     if (result) {
                         location.href = "index1.html";
                         // localStorage.setItem('username', $('.username').val());
-                        $.cookie('username', $('.username').val(), {
-                            expires: 7,
-                            path: "/"
-                        });
+                        localStorage.setItem('username', $('.username').val());
 
                     } else {
                         $('.password').val('');
