@@ -65,8 +65,8 @@ body {
 }
 
 // 网站顶部
-@import "./top/page_top";
+@import "page_tops";
 // 商品分类部分
-@import "./category/goods_category";
+@import "goods_categorys";
 // 商城主要部分
-@import "./shop_main/shop_main.scss";
+@import "shop_mains.scss";

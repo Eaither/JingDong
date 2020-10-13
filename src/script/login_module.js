@@ -3,24 +3,41 @@ define(['sha1', 'jcookie'], function() {
         init: function() {
             //二维码hover效果
 
-            const $qr_code = $('.qr_code');
-            $qr_code.hover(() => {
+            var $qr_code = $('.qr_code');
+            // $qr_code.hover(() => {
+            //     $('.qr_img').stop(true).animate({
+            //         left: 10
+            //     });
+            //     $('.qrcode-help').stop(true).animate({
+            //         right: 10
+            //     });
+            // }, () => {
+            //     $('.qr_img').stop(true).animate({
+            //         left: 85
+            //     });
+            //     $('.qrcode-help').stop(true).animate({
+            //         right: -144
+            //     });
+            // });
+            $qr_code.on('mouseover', function() {
                 $('.qr_img').stop(true).animate({
                     left: 10
                 });
                 $('.qrcode-help').stop(true).animate({
                     right: 10
                 });
-            }, () => {
+            })
+            $qr_code.on('mouseout', function() {
                 $('.qr_img').stop(true).animate({
                     left: 85
                 });
                 $('.qrcode-help').stop(true).animate({
                     right: -144
                 });
-            });
+            })
 
-            const $section = $('.tab>section');
+
+            var $section = $('.tab>section');
 
 
             // tab切换
@@ -43,7 +60,7 @@ define(['sha1', 'jcookie'], function() {
                 });
                 $.ajax({
                     type: 'post',
-                    url: 'http://192.168.1.32/jingdong/php/login.php',
+                    url: 'http://192.168.13.24/jingdong/php/login.php',
                     data: {
                         user: $('.username').val(),
                         pass: hex_sha1($('.password').val())

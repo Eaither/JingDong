@@ -2,25 +2,25 @@ define(['sha1'], function() {
     return {
         init: function() {
             // 获取元素
-            let $username = $('.username'); //用户名
-            let $password = $('.password'); //密码啊
-            let $repass = $('.psd_s'); //确认密码
-            let $email = $('.email'); //邮箱
-            let $mailCode = $('.mailCode');
-            let status = $('.i-status'); //对
-            let cancel = $('.i-cancel'); //叉
-            let span = $('.tip span');
-            console.log($('input').not('.submit'));
-            let flag = true;
+            var $username = $('.username'); //用户名
+            var $password = $('.password'); //密码啊
+            var $repass = $('.psd_s'); //确认密码
+            var $email = $('.email'); //邮箱
+            var $mailCode = $('.mailCode');
+            var status = $('.i-status'); //对
+            var cancel = $('.i-cancel'); //叉
+            var span = $('.tip span');
+            // console.log($('input').not('.submit'));
+            var flag = true;
             // console.log($span)
             // console.log($status);
             // console.log($cancel)
             // 标记
-            let $userFlag = false;
-            let $passFlag = false;
-            let $repassFlag = false;
-            let $emailFlag = false;
-            let $mailFlag = false;
+            var $userFlag = false;
+            var $passFlag = false;
+            var $repassFlag = false;
+            var $emailFlag = false;
+            var $mailFlag = false;
 
             // input 有值叉显示
 
@@ -58,7 +58,7 @@ define(['sha1'], function() {
             // 失去焦点
             $username.on('blur', function() {
                 if ($username.val() !== '') {
-                    let len = $username.val().replace(/[\u4e00-\u9fa5]/g, '**').length;
+                    var len = $username.val().replace(/[\u4e00-\u9fa5]/g, '**').length;
                     console.log(len);
                     // 长度
                     if (len >= 4 && len <= 20) {
@@ -67,7 +67,7 @@ define(['sha1'], function() {
                         if (reg.test($(this).val())) {
                             $.ajax({
                                 type: 'post',
-                                url: 'http://192.168.1.32/jingdong/php/registry.php',
+                                url: 'http://192.168.13.24/jingdong/php/registry.php',
                                 data: {
                                     username: $username.val()
                                 }
@@ -115,11 +115,11 @@ define(['sha1'], function() {
             $password.on('input', function() {
                 if ($(this).val().length >= 8) {
                     $(span[1]).html('');
-                    let reg1 = /\d+/; //数字
-                    let reg2 = /[a-z]+/;
-                    let reg3 = /[A-Z]+/;
-                    let reg4 = /[\W\_]+/; //特殊字符
-                    let count = 0; //统计字符的种类。
+                    var reg1 = /\d+/; //数字
+                    var reg2 = /[a-z]+/;
+                    var reg3 = /[A-Z]+/;
+                    var reg4 = /[\W\_]+/; //特殊字符
+                    var count = 0; //统计字符的种类。
                     if (reg1.test(this.value)) { //密码中存在数字。
                         count++;
                     }
@@ -215,7 +215,7 @@ define(['sha1'], function() {
             $email.on('blur', function() {
                 // $('.email-suggest').hide();
                 if ($(this).val() !== '') {
-                    let reg = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+                    var reg = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
                     if (reg.test($(this).val())) {
                         $(span[3]).html('');
                         $(status[3]).show();
@@ -238,7 +238,7 @@ define(['sha1'], function() {
                 } else {
                     $('.email-suggest').hide();
                 }
-                let em = $('.value');
+                var em = $('.value');
                 $.each(em, function(index, value) {
                     $(value).html($(value).find('span'));
                     $(value).html($email.val() + $(value).html());
@@ -248,7 +248,7 @@ define(['sha1'], function() {
             });
             // 点击相应的li将邮箱填入input
             // console.log($('.email-suggest').find('li'));
-            // let uArr = $('.email-suggest').find('li');
+            // var uArr = $('.email-suggest').find('li');
 
             // 列表鼠标划入划出显示隐藏
             $('.email-suggest').on('mouseover', function() {
@@ -256,11 +256,11 @@ define(['sha1'], function() {
             });
             $('.email-suggest').find('li').on('click', function() {
                 // alert(1)
-                let val = $(this).find('.value').html().replace('<span>', '').replace('</span>', '');
-                // let val = $(this).find('.value');
+                var val = $(this).find('.value').html().replace('<span>', '').replace('</span>', '');
+                // var val = $(this).find('.value');
                 $email.val(val);
                 $('.email-suggest').hide();
-                let reg = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+                var reg = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
                 if (reg.test($email.val())) {
                     $(span[3]).html('');
                     $(status[3]).show();
@@ -278,9 +278,9 @@ define(['sha1'], function() {
             }
 
             function yanzm() {
-                let arr = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
-                let str = '';
-                for (let i = 0; i < 6; i++) {
+                var arr = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+                var str = '';
+                for (var i = 0; i < 6; i++) {
                     str += arr[ranNum(0, arr.length - 1)];
                 }
 

@@ -166,11 +166,12 @@ body {
 }
 
 .elevator {
-  position: fixed;
-  top: 74px;
+  position: absolute;
+  top: 0;
   left: 50%;
   margin-left: 615px;
   z-index: 100;
+  transition: transform .5s ease, -webkit-transform .5s ease;
 }
 .elevator .ele_list {
   overflow: hidden;
@@ -209,6 +210,14 @@ body {
 }
 .elevator .active .ele_lk_txt {
   color: #e1251b;
+}
+
+.elevator_fix {
+  position: fixed;
+  top: 75px;
+  left: 50%;
+  margin-left: 615px;
+  animation: eleShow 1s ease both;
 }
 
 /*# sourceMappingURL=footer.css.map */

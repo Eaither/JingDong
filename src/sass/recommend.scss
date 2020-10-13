@@ -69,4 +69,4 @@ body {
     @include flex(column, center, center);
 }
 
-@import "./shop_main/recommend";
+@import "recommends";

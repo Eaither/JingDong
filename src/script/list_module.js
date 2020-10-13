@@ -1,59 +1,47 @@
 define(['pagination', 'jlazyload'], function() {
     return {
         init: function() {
-            let array_default = []; //排序前的数组，默认数组
-            let array = []; //排序中的数组
-            let prev = null; //前一个价格
-            let next = null; //后一个一个价格
-            const $list = $('.list');
+            var array_default = []; //排序前的数组，默认数组
+            var array = []; //排序中的数组
+            var prev = null; //前一个价格
+            var next = null; //后一个一个价格var
+            var $list = $('.list');
             // 请求默认数据
             $.ajax({
-                url: "http://192.168.1.32/jingdong/php/listdata.php",
+                url: "http://192.168.13.24/jingdong/php/listdata.php",
                 dataType: 'json'
             }).done(function(data) {
                 console.log(data);
-                let strHtml = '<ul>';
+                var strHtml = '<ul>';
                 $.each(data, function(index, value) {
-                    strHtml += `
-                    <li sid="${value.sid}">
-                    <div class="wrap">
-                        <div class="p_img">
-                            <img class="lazy" src="${value.url}" alt="" width=220 height=220>
-                        </div>
-                        <!-- 价格 -->
-                        <div class="p_price">
-                            <strong>
-                                <em>￥</em>
-                                <i>${value.price}</i>
-                            </strong>
-                        </div>
-                        <!-- 标题 -->
-                        <div class="p_title">
-                            <span>${value.title}</span>
-                        </div>
-                        <!-- 评论 -->
-                        <div class="p_commit">
-                            <strong>
-                                已有<a href="#">${value.sailnumber}w+</a>人评价
-                            </strong>
-                        </div>
-                        <!-- 自营满减 -->
-                        <div class="p_icon">
-                            <span>自营</span>
-                            <span>满减</span>
-                        </div>
-                        <!-- 关注加入购物车 -->
-                        <div class="p-operate">
-                            <a href="#" class="operate">
-                                <i></i>关注
-                            </a>
-                            <a href="#" class="cart">
-                                <i></i>加入购物车
-                            </a>
-                        </div>
-                    </div>
-                </li>
-                    `;
+                    strHtml +=
+                        '<li sid="' + value.sid + '">' +
+                        '<div class="wrap">' +
+                        '<div class="p_img">' +
+                        '<img class="lazy" src="' + value.url + '" alt="" width=220 height=220>' +
+                        '</div>' +
+                        '<div class="p_price">' +
+                        '<strong>' +
+                        '<em>￥</em>' +
+                        '<i>' + value.price + '</i>' +
+                        '</strong>' +
+                        '</div>' +
+                        '<div class="p_title">' +
+                        '<span>' + value.title + '</span>' +
+                        '</div>' +
+                        '<div class="p_commit">' +
+                        '<strong>已有<a href="#">' + value.sailnumber + 'w+</a>人评价</strong>' +
+                        '</div>' +
+                        '<div class="p_icon">' +
+                        '<span>自营</span>' +
+                        '<span>满减</span>' +
+                        '</div>' +
+                        '<div class="p-operate">' +
+                        '<a href="#" class="operate"><i></i>关注</a>' +
+                        '<a href="#" class="cart"><i></i>加入购物车</a>' +
+                        '</div>' +
+                        '</div>' +
+                        '</li>';
                 });
 
                 $list.html(strHtml);
@@ -86,54 +74,42 @@ define(['pagination', 'jlazyload'], function() {
                 callback: function(api) {
                     console.log(api.getCurrent()); //获取的页码给后端
                     $.ajax({
-                        url: 'http://192.168.1.32/jingdong/php/listdata.php',
+                        url: 'http://192.168.13.24/jingdong/php/listdata.php',
                         data: {
                             page: api.getCurrent() //传输页面
                         },
                         dataType: 'json'
                     }).done(function(data) {
-                        let $strhtml = '<ul>';
+                        var $strhtml = '<ul>';
                         $.each(data, function(index, value) {
-                            $strhtml += `
-                            <li sid="${value.sid}">
-                            <div class="wrap">
-                                <div class="p_img">
-                                    <img class="lazy" src="${value.url}" alt="" width=220 height=220>
-                                </div>
-                                <!-- 价格 -->
-                                <div class="p_price">
-                                    <strong>
-                                        <em>￥</em>
-                                        <i>${value.price}</i>
-                                    </strong>
-                                </div>
-                                <!-- 标题 -->
-                                <div class="p_title">
-                                    <span>${value.title}</span>
-                                </div>
-                                <!-- 评论 -->
-                                <div class="p_commit">
-                                    <strong>
-                                        已有<a href="#">${value.sailnumber}w+</a>人评价
-                                    </strong>
-                                </div>
-                                <!-- 自营满减 -->
-                                <div class="p_icon">
-                                    <span>自营</span>
-                                    <span>满减</span>
-                                </div>
-                                <!-- 关注加入购物车 -->
-                                <div class="p-operate">
-                                    <a href="#" class="operate">
-                                        <i></i>关注
-                                    </a>
-                                    <a href="#" class="cart">
-                                        <i></i>加入购物车
-                                    </a>
-                                </div>
-                            </div>
-                        </li>
-                            `;
+                            $strhtml +=
+                                '<li sid="' + value.sid + '">' +
+                                '<div class="wrap">' +
+                                '<div class="p_img">' +
+                                '<img class="lazy" src="' + value.url + '" alt="" width=220 height=220>' +
+                                '</div>' +
+                                '<div class="p_price">' +
+                                '<strong>' +
+                                '<em>￥</em>' +
+                                '<i>' + value.price + '</i>' +
+                                '</strong>' +
+                                '</div>' +
+                                '<div class="p_title">' +
+                                '<span>' + value.title + '</span>' +
+                                '</div>' +
+                                '<div class="p_commit">' +
+                                '<strong>已有<a href="#">' + value.sailnumber + 'w+</a>人评价</strong>' +
+                                '</div>' +
+                                '<div class="p_icon">' +
+                                '<span>自营</span>' +
+                                '<span>满减</span>' +
+                                '</div>' +
+                                '<div class="p-operate">' +
+                                '<a href="#" class="operate"><i></i>关注</a>' +
+                                '<a href="#" class="cart"><i></i>加入购物车</a>' +
+                                '</div>' +
+                                '</div>' +
+                                '</li>';
                         });
                         $strhtml += '</ul>';
                         $list.html($strhtml);
@@ -161,13 +137,13 @@ define(['pagination', 'jlazyload'], function() {
 
             //利用事件委托实现跳转 
             $list.on('click', 'li', function() {
-                location.href = `detail.html?sid=${$(this).attr('sid')}`;
+                location.href = 'detail.html?sid=' + $(this).attr('sid');
                 // $(this).
             });
 
             // 排序
-            let $fs_flag = false; //用于标记是否已经点击
-            const $fs = $('.fs');
+            var $fs_flag = false; //用于标记是否已经点击
+            var $fs = $('.fs');
             // 默认排序 -如果已经排序恢复原样
             $('.f_sort a').eq(0).on('click', function() {
                 $.each(array_default, function(index, value) {
@@ -178,19 +154,19 @@ define(['pagination', 'jlazyload'], function() {
             // 升序降序
             // 升序降序方法
             function ascending(option) { //{$arr:array,element,$type:true/false}
-                for (let i = 0; i < option.$arr.length - 1; i++) {
-                    for (let j = 0; j < option.$arr.length - i - 1; j++) {
-                        let prev = parseFloat(option.$arr[j].find(option.$ele).html());
-                        let next = parseFloat(option.$arr[j + 1].find(option.$ele).html());
+                for (var i = 0; i < option.$arr.length - 1; i++) {
+                    for (var j = 0; j < option.$arr.length - i - 1; j++) {
+                        var prev = parseFloat(option.$arr[j].find(option.$ele).html());
+                        var next = parseFloat(option.$arr[j + 1].find(option.$ele).html());
                         if (option.$type) {
                             if (prev > next) {
-                                let temp = option.$arr[j];
+                                var temp = option.$arr[j];
                                 option.$arr[j] = option.$arr[j + 1];
                                 option.$arr[j + 1] = temp;
                             }
                         } else {
                             if (prev < next) {
-                                let temp = array[j];
+                                var temp = array[j];
                                 array[j] = array[j + 1];
                                 array[j + 1] = temp;
                             }

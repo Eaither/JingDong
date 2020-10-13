@@ -2,17 +2,17 @@ define(['jcookie'], function() {
     return {
         init: function() {
             // 从地址获取sid
-            let $num = location.search.toString(1).split('=')[1];
-            console.log($num);
+            var $num = location.search.toString(1).split('=')[1];
+            // console.log($num);
             // 从后端获取sid对应的数据
             $.ajax({
-                url: "http://192.168.1.32/jingdong/php/getsid.php",
+                url: "http://192.168.13.24/jingdong/php/getsid.php",
                 dataType: 'json',
                 data: {
                     sid: $num
                 }
             }).done(function(data) {
-                console.log(data);
+                // console.log(data);
                 // 渲染
                 $('#smallpic').attr('src', data.url);
                 $('#bpic').attr('src', data.url);
@@ -30,22 +30,20 @@ define(['jcookie'], function() {
                 // 评论
                 $('.counts').html(data.sailnumber + '万+');
                 $('title').html(data.title);
-                let aImg = data.piclisturl.split(',');
+                var aImg = data.piclisturl.split(',');
                 // console.log(aImg);
-                let str = '';
+                var str = '';
                 $.each(aImg, function(index, value) {
                     if (index !== 0) {
-                        str += `
-                    <li>
-                        <img src="${value}" alt="">
-                    </li>
-                    `;
+                        str +=
+                            '<li>' +
+                            '<img src=' + value + 'alt="">' +
+                            '</li>';
+
                     } else {
-                        str += `
-                        <li class="active">
-                            <img src="${value}" alt="">
-                        </li>
-                        `;
+                        str += '<li class = "active">' +
+                            '<img src=' + value + 'alt="">' +
+                            '</li>';
                     }
 
                 });
@@ -55,18 +53,18 @@ define(['jcookie'], function() {
             });
 
             // 放大镜效果
-            const $spic = $('#spic'); //小图
-            const $sf = $('#sf'); //小放
-            const $bf = $('#bf'); //大放
-            const $bpic = $('#bpic'); //大图
-            const $left = $('.left'); //左箭头
-            const $right = $('.right'); //右箭头
+            var $spic = $('#spic'); //小图
+            var $sf = $('#sf'); //小放
+            var $bf = $('#bf'); //大放
+            var $bpic = $('#bpic'); //大图
+            var $left = $('.left'); //左箭头
+            var $right = $('.right'); //右箭头
             // 大图/小图 = 大放/小放
             // 小放大小
             $sf.width($spic.width() * $bf.width() / $bpic.width());
             $sf.height($spic.height() * $bf.height() / $bpic.height());
             // 缩放比例
-            let $scale = $bpic.width() / $spic.width();
+            var $scale = $bpic.width() / $spic.width();
 
             //移入小图大放显示
             $spic.on('mouseover', function() {
@@ -78,8 +76,8 @@ define(['jcookie'], function() {
                 });
 
                 $spic.on('mousemove', function(ev) {
-                    let $left_value = ev.pageX - $spic.offset().left - $sf.width() / 2;
-                    let $top_value = ev.pageY - $spic.offset().top - $sf.height() / 2;
+                    var $left_value = ev.pageX - $spic.offset().left - $sf.width() / 2;
+                    var $top_value = ev.pageY - $spic.offset().top - $sf.height() / 2;
                     // 限制小放在框内移动
                     if ($left_value < 0) {
                         $left_value = 0;
@@ -138,8 +136,8 @@ define(['jcookie'], function() {
                 location.href = 'cart.html';
             });
             if ($.cookie('cookieSid') && $.cookie('cookieNum')) {
-                let sid = $.cookie('cookieSid').split(',');
-                let num = $.cookie('cookieNum').split(',');
+                var sid = $.cookie('cookieSid').split(',');
+                var num = $.cookie('cookieNum').split(',');
                 $('.num').html(sid.length);
             } else {
                 $('.num').html('0');
@@ -147,7 +145,7 @@ define(['jcookie'], function() {
 
 
             // $('.right_arrow').hover(() => {
-            //     let dd= $('.spec_list').offset().left<$()
+            //     var dd= $('.spec_list').offset().left<$()
             //     if ($('.spec_list li').size() > 5) {
             //         $('.right_arrow').css({
             //             backgroundImage: 'url(./img/__sprite.png)',
@@ -157,16 +155,16 @@ define(['jcookie'], function() {
             // }, () => {
             //     if($index>)
             // });
-            let $index = 5; //显示图片数量索引
+            var $index = 5; //显示图片数量索引
             // 点击右边按钮
             $right.on('click', function() {
                 // alert(1)
-                let $specLi = $('.spec_list li');
-                console.log($specLi.size())
+                var $specLi = $('.spec_list li');
+                // console.log($specLi.size())
 
                 if (($specLi.size() - $index) > 5) {
                     $index += 5;
-                    console.log($index)
+                    // console.log($index)
                     $('.left_arrow').css({
                         backgroundImage: 'url(./img/__sprite.png)',
                         backgroundPosition: '0px -54px'
@@ -176,7 +174,7 @@ define(['jcookie'], function() {
                     });
                 } else {
                     $index += ($specLi.size() - $index);
-                    console.log($index)
+                    // console.log($index)
                     $('.left_arrow').css({
                         backgroundImage: 'url(./img/__sprite.png)',
                         backgroundPosition: '0px -54px'
@@ -194,11 +192,11 @@ define(['jcookie'], function() {
             });
             // 点击左边按钮
             $left.on('click', function() {
-                console.log($index)
-                let $specLi = $('.spec_list li');
+                // console.log($index)
+                var $specLi = $('.spec_list li');
                 if ($specLi.size() > 5) {
                     console.log(1)
-                    console.log($index)
+                        // console.log($index)
                     if (($specLi.size() - $index) > 5) {
                         console.log(2)
                         $index -= 5;
@@ -239,8 +237,8 @@ define(['jcookie'], function() {
 
 
             // 存入购物车
-            let arrSid = []; //存储商品编号
-            let arrNum = []; //存储商品数量
+            var arrSid = []; //存储商品编号
+            var arrNum = []; //存储商品数量
 
             // 取出cookie值判断是否是多次点击
             function cookieToArray() {
@@ -262,7 +260,7 @@ define(['jcookie'], function() {
                 // 根据cookie判断商品是否已经存在
                 if ($.inArray($num, arrSid) != -1) { //存在
                     //获取数量+input值
-                    let count = parseInt(arrNum[$.inArray($num, arrSid)]) + parseInt($('.input_wrap input').val());
+                    var count = parseInt(arrNum[$.inArray($num, arrSid)]) + parseInt($('.input_wrap input').val());
                     arrNum[$.inArray($num, arrSid)] = count;
                     // 重新写入cookie
                     $.cookie('cookieNum', arrNum, { expires: 100, path: '/' });
@@ -276,12 +274,12 @@ define(['jcookie'], function() {
             });
             // 点击+ - 按钮改变 input的值
             $('.add').on('click', function() {
-                let count = parseInt($('.input_wrap input').val());
+                var count = parseInt($('.input_wrap input').val());
                 count++;
                 $('.input_wrap input').val(count);
             });
             $('.less').on('click', function() {
-                let count = parseInt($('.input_wrap input').val());
+                var count = parseInt($('.input_wrap input').val());
                 if (count > 0) {
                     count--;
                 } else {

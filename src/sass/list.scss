@@ -61,4 +61,4 @@ body {
     @include flex(column, center, center);
 }
 
-@import "./list/list";
+@import "lists";

@@ -3,13 +3,13 @@ define(['jlazyload', 'jcookie'], function() {
         init: function() {
             function showList(sid, num) {
                 $.ajax({
-                    url: 'http://192.168.1.32/jingdong/php/alldata.php',
+                    url: 'http://192.168.13.24/jingdong/php/alldata.php',
                     dataType: 'json'
                 }).done(function(data) {
                     // 根据sid 克隆相应的选项
                     $.each(data, function(index, value) {
                         if (sid === value.sid) {
-                            let $cloneBox = $('.cart-tbody:hidden').clone(true, true);
+                            var $cloneBox = $('.cart-tbody:hidden').clone(true, true);
                             // 图片
                             $cloneBox.find('.goods-pic').find('img').attr('src', value.url);
                             $cloneBox.find('.b-action a').attr('sid', value.sid);
@@ -26,10 +26,10 @@ define(['jlazyload', 'jcookie'], function() {
                             calcPrice();
 
                             // //
-                            let ori = $cloneBox.find('.quantity-form input').val();
-                            let $aSid = $.cookie('cookieSid').split(',');
-                            let $aNum = $.cookie('cookieNum').split(',');
-                            let i = $aSid.indexOf($cloneBox.find('.b-action a').attr('sid'));
+                            var ori = $cloneBox.find('.quantity-form input').val();
+                            var $aSid = $.cookie('cookieSid').split(',');
+                            var $aNum = $.cookie('cookieNum').split(',');
+                            var i = $aSid.indexOf($cloneBox.find('.b-action a').attr('sid'));
 
                             console.log(i)
                             $cloneBox.find('.quantity-add').on('click', function() { //给每个克隆的元素的+添加事件
@@ -67,9 +67,9 @@ define(['jlazyload', 'jcookie'], function() {
                             $cloneBox.find('.b-action a').eq(0).on('click', function() { //给每个克隆的元素的+添加事件
                                 if (window.confirm('你确定要删除吗？')) {
                                     $cloneBox.remove();
-                                    // let $aSid = $.cookie('cookieSid').split(',');
-                                    // let $aNum = $.cookie('cookieNum').split(',');
-                                    // let i = $aSid.indexOf($('.b-action a').sid)
+                                    // var $aSid = $.cookie('cookieSid').split(',');
+                                    // var $aNum = $.cookie('cookieNum').split(',');
+                                    // var i = $aSid.indexOf($('.b-action a').sid)
                                     $aSid.splice(i, 1);
                                     $aNum.splice(i, 1); //删除数组中对应索引的数据
                                     // console.log($aNum);
@@ -87,8 +87,8 @@ define(['jlazyload', 'jcookie'], function() {
 
             // 计算总价函数
             function calcPrice() {
-                let $sum = 0;
-                let $count = 0;
+                var $sum = 0;
+                var $count = 0;
                 // 计算选中的商品总价总数
                 $('.cart-tbody:visible').each(function(index, element) {
                     if ($(element).find('.cart-checkbox input').prop('checked')) {
@@ -104,26 +104,35 @@ define(['jlazyload', 'jcookie'], function() {
             }
             // 计算单价
             // function calcsingleprice(obj) { //obj元素对象
-            //     let $dj = parseFloat(obj.find('.b-price strong').html());
-            //     let $num = parseInt(obj.find('.quantity-form input').val());
+            //     var $dj = parseFloat(obj.find('.b-price strong').html());
+            //     var $num = parseInt(obj.find('.quantity-form input').val());
             //     return ($dj * $num).toFixed(2)
             // }
 
             // 根据cookie值渲染购物车
             if ($.cookie('cookieSid') && $.cookie('cookieNum')) {
-                let sid = $.cookie('cookieSid').split(',');
-                let num = $.cookie('cookieNum').split(',');
+                var sid = $.cookie('cookieSid').split(',');
+                var num = $.cookie('cookieNum').split(',');
+                $('.container').find('.w').hide();
+                $('.wrap').show();
+                $('.cart-wrap').show();
                 $.each(sid, function(index, element) {
                     showList(sid[index], num[index], index);
                 });
+            } else {
+                $('.container').find('.w').show();
+                $('.wrap').hide();
+                $('.cart-wrap').hide();
             }
+
+
             // 全选
             $('.allsel').on('change', function() {
                 $('.cart-tbody:visible').find(':checkbox').prop('checked', $(this).prop('checked'));
                 $('.allsel').prop('checked', $(this).prop('checked'));
                 calcPrice(); //计算总价
             });
-            let $inputs = $('.goods-item:visible').find(':checkbox');
+            var $inputs = $('.goods-item:visible').find(':checkbox');
             $('.item-list').on('change', $inputs, function() {
                 //$(this):被委托的元素，checkbox
                 if ($('.goods-item:visible').find(':checkbox').length === $('.goods-item:visible').find('input:checked').size()) {

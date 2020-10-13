@@ -62,4 +62,4 @@ body {
     @include flex(column, center, center);
 }
 
-@import "./detail/detail";
+@import "details";

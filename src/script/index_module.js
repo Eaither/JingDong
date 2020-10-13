@@ -1,9 +1,8 @@
 define(['jlazyload'], function() {
     return {
         init: function() {
-
             // 关闭顶部广告
-            const $close = $('.top_container .iconfont');
+            var $close = $('.top_container .iconfont');
             $close.on('click', function() {
                 // console.log(1)
                 // alert(1);
@@ -14,7 +13,7 @@ define(['jlazyload'], function() {
             // $(window).scrollTop() >= 500 ? $('.search-fix').show() : $('.search-fix').hide();
 
             $(window).on('scroll', function() {
-                if ($(window).scrollTop() >= 500) {
+                if ($(window).scrollTop() >= 900) {
                     $('.search-logo').show()
                     $('.suspension_wrap').addClass('search-fix');
 
@@ -49,16 +48,21 @@ define(['jlazyload'], function() {
                 });
 
                 // 鼠标划入划出item，cartlist状态
-                $cartlist.hover(() => {
+                // $cartlist.hover(() => {
+                //     $cartlist.show();
+                // }, () => {
+                //     $cartlist.hide();
+                // });
+                $cartlist.on('mouseover', function() {
                     $cartlist.show();
-                }, () => {
+                });
+                $cartlist.on('mouseout', function() {
                     $cartlist.hide();
                 });
-
                 //根据页面卷曲的高度cartlist下移相应位置
                 $(window).on('scroll', function() {
                     // 页面卷去高度
-                    let $cTop = $(window).scrollTop();
+                    var $cTop = $(window).scrollTop();
                     if ($cTop > $('.inner_left').offset().top) {
                         $cartlist.css({
                             top: $cTop - $('.inner_left').offset().top
@@ -91,15 +95,15 @@ define(['jlazyload'], function() {
 
             // 页面大轮播图
             ! function() {
-                const $ban_left = $(".ban_left");
-                const $ban_ol = $(".ban_ol li"); //圆圈
-                const $bannerLi = $('.banner_list li');
-                const $goods_ban_left = $('.goods_ban_left'); //左移按钮
-                const $goods_ban_right = $('.goods_ban_right'); //右边移按钮
+                var $ban_left = $(".ban_left");
+                var $ban_ol = $(".ban_ol li"); //圆圈
+                var $bannerLi = $('.banner_list li');
+                var $goods_ban_left = $('.goods_ban_left'); //左移按钮
+                var $goods_ban_right = $('.goods_ban_right'); //右边移按钮
 
-                let $num = 0; //图片索引标记
-                let timer = null;
-                for (let i = 0; i < $bannerLi.length; i++) {
+                var $num = 0; //图片索引标记
+                var timer = null;
+                for (var i = 0; i < $bannerLi.length; i++) {
                     num = i;
                     $bannerLi[i].index = num;
                 }
@@ -147,7 +151,20 @@ define(['jlazyload'], function() {
                     });
                     // console.log($num);
                 });
-                timer = setInterval(() => {
+                // timer = setInterval(() => {
+                //     $num++;
+                //     if ($num >= $ban_ol.length) {
+                //         $num = 0;
+                //     }
+                //     // tabChange($num)
+                //     tabChange({
+                //         $num: $num,
+                //         $ol: '.ban_ol li',
+                //         $li: '.banner_list li',
+                //         $speed: 500
+                //     });
+                // }, 3000);
+                timer = setInterval(function() {
                     $num++;
                     if ($num >= $ban_ol.length) {
                         $num = 0;
@@ -160,11 +177,28 @@ define(['jlazyload'], function() {
                         $speed: 500
                     });
                 }, 3000);
-
-                $ban_left.hover(() => {
+                // $ban_left.hover(() => {
+                //     clearInterval(timer)
+                // }, () => {
+                //     timer = setInterval(() => {
+                //         $num++;
+                //         if ($num >= $ban_ol.length) {
+                //             $num = 0;
+                //         }
+                //         // tabChange($num)
+                //         tabChange({
+                //             $num: $num,
+                //             $ol: '.ban_ol li',
+                //             $li: '.banner_list li',
+                //             $speed: 500
+                //         });
+                //     }, 3000);
+                // });
+                $ban_left.on('mouseover', function() {
                     clearInterval(timer)
-                }, () => {
-                    timer = setInterval(() => {
+                });
+                $ban_left.on('mouseout', function() {
+                    timer = setInterval(function() {
                         $num++;
                         if ($num >= $ban_ol.length) {
                             $num = 0;
@@ -177,25 +211,26 @@ define(['jlazyload'], function() {
                             $speed: 500
                         });
                     }, 3000);
-                })
+                });
             }();
             // 页面大轮播图右边小轮播
             ! function() {
-                const $ban_list = $('.ban_list'); //小轮播ul
-                const $ban_list_li = $('.ban_list li'); //分类小轮播li
-                const $goods_ol_left = $(".goods_ol_left"); //左按钮
-                const $goods_ol_right = $(".goods_ol_right"); //右按钮
-                let $ban_num = 0;
-                let timer = null;
+                var $ban_list = $('.ban_list'); //小轮播ul
+                var $ban_list_li = $('.ban_list li'); //分类小轮播li
+                var $goods_ol_left = $(".goods_ol_left"); //左按钮
+                var $goods_ol_right = $(".goods_ol_right"); //右按钮
+                var $ban_num = 0;
+                var timer = null;
                 // 显示隐藏按钮
-                $(".ban_right").hover(() => {
+                $(".ban_right").on('mouseover', function() {
                     $goods_ol_left.show();
                     $goods_ol_right.show()
                     clearInterval(timer);
-                }, () => {
+                });
+                $(".ban_right").on('mouseout', function() {
                     $goods_ol_left.hide();
                     $goods_ol_right.hide();
-                    timer = setInterval(() => {
+                    timer = setInterval(function() {
                         $ban_num++;
                         if ($ban_num > $ban_list_li.length - 1) {
                             $ban_num = 0;
@@ -207,6 +242,25 @@ define(['jlazyload'], function() {
                         });
                     }, 5000);
                 });
+                // $(".ban_right").hover(() => {
+                //     $goods_ol_left.show();
+                //     $goods_ol_right.show()
+                //     clearInterval(timer);
+                // }, () => {
+                //     $goods_ol_left.hide();
+                //     $goods_ol_right.hide();
+                //     timer = setInterval(() => {
+                //         $ban_num++;
+                //         if ($ban_num > $ban_list_li.length - 1) {
+                //             $ban_num = 0;
+                //         }
+                //         tabChange({
+                //             $num: $ban_num,
+                //             $li: '.ban_list li',
+                //             $speed: 300
+                //         });
+                //     }, 5000);
+                // });
                 // 
                 $goods_ol_right.on('click', function() {
                     $ban_num++;
@@ -232,7 +286,7 @@ define(['jlazyload'], function() {
                         $speed: 300
                     });
                 });
-                timer = setInterval(() => {
+                timer = setInterval(function() {
                     $ban_num++;
                     if ($ban_num > $ban_list_li.length - 1) {
                         $ban_num = 0;
@@ -249,12 +303,12 @@ define(['jlazyload'], function() {
             // 获取后端数据
             ! function() {
                 $.ajax({
-                    url: "http://192.168.0.103/jingdong/php/alldata.php",
+                    url: "http://192.168.13.24/jingdong/php/alldata.php",
                     dataType: "json"
-                }).done((data) => {
-                    let $strLi = ''; //定义一个空字符串用于将获取的数据存储
+                }).done(function(data) {
+                    var $strLi = ''; //定义一个空字符串用于将获取的数据存储
                     // 遍历获取的数据
-                    const $seckill_list = $('.seckill_list');
+                    var $seckill_list = $('.seckill_list');
                     // 把ul改成定位
                     $seckill_list.css({
                         position: 'absolute',
@@ -264,32 +318,31 @@ define(['jlazyload'], function() {
                     $.each(data, function(index, value) {
                         // alert(1);
                         if (index < 16) {
-                            $strLi += `
-                            <li>
-                            <a href="#">
-                                <img src="${value.url}" alt="" width="140" height="140">
-                                <h6>${value.title}</h6>
-                                <div class="square">
-                                    <span class="s_price">
-                                        <i>￥</i>
-                                        <span>${value.price}</span>
-                                    </span>
-                                    <span class="s_price">
-                                        <i>￥</i>
-                                        <span>3</span>
-                                    </span>
-                                </div>
-                            </a>
-                        </li> `;
+                            $strLi +=
+                                '<li>' +
+                                '<a href="#">' +
+                                '<img src="' + value.url + '" alt="" width="140" height="140">' +
+                                '<h6>' + value.title + '</h6>' +
+                                '<div class="square">' +
+                                '<span class="s_price">' +
+                                '<i>￥</i>' +
+                                '<span>' + value.price + '</span>' +
+                                '</span>' +
+                                '<span class="s_price">' +
+                                '<i>￥</i>' +
+                                '<span>3</span>' +
+                                '</span>' +
+                                '</div>' +
+                                '</a>' +
+                                '</li>';
                         }
-
                     }); //each
                     $seckill_list.html($strLi);
                     // 克隆前四个li追加给ul
-                    let $seckill_li = $('.seckill_list li');
+                    var $seckill_li = $('.seckill_list li');
                     $.each($seckill_li, function(index, value) {
                         if (index < 4) {
-                            let $clone_li = $seckill_li.eq(index).clone(true, true);
+                            var $clone_li = $seckill_li.eq(index).clone(true, true);
                             $seckill_list.append($clone_li)
                         } else {
                             return false;
@@ -297,10 +350,10 @@ define(['jlazyload'], function() {
                     });
 
                     // 单个li长度
-                    let $liLen = $seckill_li.eq(1).width();
+                    var $liLen = $seckill_li.eq(1).width();
                     // 给ul设置宽度
                     $seckill_list.width($liLen * ($seckill_li.length + 4));
-                    let num_li = 0;
+                    var num_li = 0;
                     $('.goods_seckill_right').on('click', function() {
                         num_li += 4;
                         if (num_li > $seckill_li.length) {
@@ -335,9 +388,9 @@ define(['jlazyload'], function() {
 
 
             // 楼梯效果
-            const $elevator = $('.elevator'); //楼梯外层盒子
-            const $stairs = $('.ele_item'); //楼梯
-            const $level = $('.level'); //楼层
+            var $elevator = $('.elevator'); //楼梯外层盒子
+            var $stairs = $('.ele_item'); //楼梯
+            var $level = $('.level'); //楼层
 
 
             // 回到顶部
@@ -351,7 +404,7 @@ define(['jlazyload'], function() {
                 $(this).addClass('active').siblings().removeClass('active');
                 // 获取楼层top
                 if ($level.eq($(this).index())) {
-                    let $levelTop = $level.eq($(this).index()).offset().top - 74;
+                    var $levelTop = $level.eq($(this).index()).offset().top - 74;
                     $('html,body').animate({
                         scrollTop: $levelTop
                     });
@@ -359,13 +412,11 @@ define(['jlazyload'], function() {
             });
 
             $(window).on('scroll', function() {
-                let $top = $(window).scrollTop();
-
-
+                var $top = $(window).scrollTop();
                 // 拖动滚动条给楼层
                 $level.each(function(index, element) {
                     // alert(1)
-                    let $levelTop = $(element).offset.top + $(element).height / 3;
+                    var $levelTop = $(element).offset().top + $(element).height() / 3;
 
                     if ($levelTop > $top) {
                         $stairs.removeClass('active');
@@ -380,8 +431,8 @@ define(['jlazyload'], function() {
                 location.href = 'cart.html';
             });
             if ($.cookie('cookieSid') && $.cookie('cookieNum')) {
-                let sid = $.cookie('cookieSid').split(',');
-                let num = $.cookie('cookieNum').split(',');
+                var sid = $.cookie('cookieSid').split(',');
+                var num = $.cookie('cookieNum').split(',');
                 $('.num').html(sid.length);
             } else {
                 $('.num').html('0');
@@ -403,32 +454,30 @@ define(['jlazyload'], function() {
 
 
             // 发现好货
-            const $find_list = $('.find_list');
+            var $find_list = $('.find_list');
             $.ajax({
-                url: 'http://192.168.0.103/jingdong/php/nicegoods.php',
+                url: 'http://192.168.13.24/jingdong/php/nicegoods.php',
                 dataType: 'json'
             }).done(function(data) {
 
-                let $strLi = '';
+                var $strLi = '';
                 $.each(data, function(index, value) {
                     if (index % 2 !== 0) {
-                        $strLi += `
-                        <li>
-                        <div class="find_title">
-                        ${value.title}
-                        </div>
-                        <img class="lazy" src="${value.url}" alt="" width="150" height = "150">
-                        </li>
-                        `;
+                        $strLi +=
+                            '<li>' +
+                            '<div class="find_title">' +
+                            value.title +
+                            '</div>' +
+                            '<img class="lazy" src="${value.url}" alt="" width="150" height = "150">' +
+                            '</li>';
                     } else {
-                        $strLi += `
-                        <li>
-                        <img class="lazy" src="${value.url}" alt="" width="150" height = "150">
-                        <div class="find_title">
-                        ${value.title}
-                        </div>
-                        </li>
-                        `;
+                        $strLi +=
+                            '<li>' +
+                            '<div class="find_title">' +
+                            value.title +
+                            '</div>' +
+                            '<img class="lazy" src="${value.url}" alt="" width="150" height = "150">' +
+                            '</li>';
                     }
                 });
                 $strLi += $strLi;
@@ -441,12 +490,12 @@ define(['jlazyload'], function() {
 
                 $find_li = $('.find_list li');
                 //单个li长度
-                let $liLen = $find_li.eq(0).width();
+                var $liLen = $find_li.eq(0).width();
                 // 给ul设置宽度
                 $find_list.width($liLen * ($find_li.length / 2));
 
-                let find_num = 0;
-                let timer1 = setInterval(() => {
+                var find_num = 0;
+                var timer1 = setInterval(function() {
                     find_num++;
                     // console.log(find_num)
                     if (find_num === 2000) {
@@ -456,14 +505,14 @@ define(['jlazyload'], function() {
                         find_num = 0;
                     }
                     $find_list.css({
-                        transform: `translateX(-${find_num}px)`
+                        transform: 'translateX(-' + find_num + 'px)'
                     })
                 }, 1000 / 60);
-
-                $('.find_right').hover(() => {
+                $('.find_right').on('mouseover', function() {
                     clearInterval(timer1)
-                }, () => {
-                    timer1 = setInterval(() => {
+                });
+                $('.find_right').on('mouseout', function() {
+                    timer1 = setInterval(function() {
                         find_num++;
                         // console.log(find_num)
                         if (find_num === 2000) {
@@ -473,10 +522,27 @@ define(['jlazyload'], function() {
                             find_num = 0;
                         }
                         $find_list.css({
-                            transform: `translateX(-${find_num}px)`
+                            transform: 'translateX(-' + find_num + 'px)'
                         })
                     }, 1000 / 60);
-                })
+                });
+                // $('.find_right').hover(() => {
+                //     clearInterval(timer1)
+                // }, () => {
+                //     timer1 = setInterval(() => {
+                //         find_num++;
+                //         // console.log(find_num)
+                //         if (find_num === 2000) {
+                //             $find_list.css({
+                //                 left: 0
+                //             })
+                //             find_num = 0;
+                //         }
+                //         $find_list.css({
+                //             transform: `translateX(-${find_num}px)`
+                //         })
+                //     }, 1000 / 60);
+                // })
             });
 
             // hover效果
@@ -493,17 +559,17 @@ define(['jlazyload'], function() {
 
             // 新品首发
 
-            const slider_list = $('.slider_wrap ul');
-            const slider_li = $('.lis');
-            const new_left = $('.goods_new_left');
-            const new_right = $('.goods_new_right');
+            var slider_list = $('.slider_wrap ul');
+            var slider_li = $('.lis');
+            var new_left = $('.goods_new_left');
+            var new_right = $('.goods_new_right');
             // 给li添加索引
-            let sli_num = 0;
+            var sli_num = 0;
             $.each(slider_li, function(index, value) {
                 sli_num = index;
                 $(value).attr('data-index', index);
             });
-            let slider_num = parseInt($('.slider_active').attr('data-index'));
+            var slider_num = parseInt($('.slider_active').attr('data-index'));
             new_right.on('click', function() {
                 slider_num++;
                 if (slider_num === 4) {
@@ -516,7 +582,7 @@ define(['jlazyload'], function() {
                 slider_li.eq(slider_num).addClass('slider_active').siblings().removeClass('slider_active');
                 slider_list.css({
                     transition: '.5s ease',
-                    transform: `translateX(${-slider_num * 130}px)`
+                    transform: 'translateX(-' + slider_num * 130 + 'px)'
                 });
             });
             // new_left.on('click', function() {
@@ -538,40 +604,38 @@ define(['jlazyload'], function() {
 
 
 
-            const $goods_list = $('.goods_list');
-            const $goods_list_li = $('.goods_list>li');
+            var $goods_list = $('.goods_list');
+            var $goods_list_li = $('.goods_list>li');
             // 利用ajax请求获取接口数据
             // console.log($goods_list)
             $.ajax({
-                url: "http://192.168.0.103/jingdong/php/alldata.php",
+                url: "http://192.168.13.24/jingdong/php/alldata.php",
                 dataType: "json"
-            }).done((data) => {
+            }).done(function(data) {
                 // console.log(data);
-                let $strLi = ''; //定义一个空字符串用于将获取的数据
+                var $strLi = ''; //定义一个空字符串用于将获取的数据
                 // 遍历获取的数据
                 $.each(data, function(index, value) {
-                    let price = value.price.toString().split(".");
-                    $strLi += `
-                            <li>
-                            <div class="rec_goods_img">
-                                        <img class="lazy" data-original="${value.url}" alt="" width="150" height = "150" >
-                                    </div>
-                                    <p>
-                                        ${value.title}
-                                    </p>
-                                    <section>
-                                        <div class="rec_price">
-                                            <i>￥</i>
-                                            <span class="int">${price[0]}.<span class="float">${price[1]}0</span>
-                                            </span>
-                                        </div>
-                                        <div class="similarity">
-                                            <span class="iconfont icon-yanjing
-                                            "> 找相似</span>
-                                            <!-- <aside>找相似</aside> -->
-                                        </div>
-                                    </section>
-                            </li>`;
+                    var price = value.price.toString().split(".");
+                    $strLi +=
+                        '<li>' +
+                        '<div class="rec_goods_img">' +
+                        '<img class="lazy" data-original="' + value.url + '" alt="" width="150" height = "150" >' +
+                        '</div>' +
+                        '<p>' +
+                        value.title +
+                        '</p>' +
+                        '<section>' +
+                        '<div class="rec_price">' +
+                        '<i>￥</i>' +
+                        '<span class="int">' + price[0] + '.<span class="float">' + price[1] + '0</span>' +
+                        '</span>' +
+                        '</div>' +
+                        '<div class="similarity">' +
+                        '<span class="iconfont icon-yanjing">找相似</span>' +
+                        '</div>' +
+                        '</section>' +
+                        '</li>';
 
                     // 将str写入ul
 
@@ -596,36 +660,36 @@ define(['jlazyload'], function() {
             ; //频道广场
 
             $.ajax({
-                url: "http://192.168.0.103/jingdong/php/channeldata.php",
+                url: "http://192.168.13.24/jingdong/php/channeldata.php",
                 dataType: "json"
-            }).done((data) => {
+            }).done(function(data) {
                 // console.log(data);
-                let $strLi = ''; //定义一个空字符串用于将获取的数据
+                var $strLi = ''; //定义一个空字符串用于将获取的数据
                 // 遍历获取的数据
                 $.each(data, function(index, value) {
                     if (!(value.sid == 1 || value.sid == 2)) {
-                        $strLi += `
-                            <div class="channel_ul${value.sid} channel_ul">
-                            <a href="#" class="title">
-                                <span>${value.title}</span>
-                                <span>${value.info}</span>
-                            </a>
-                            <div class="channel_img">
-                                <a href="#">
-                                    <img data-original="${value.img1}" alt="" class='lazy'>
-                                </a>
-                                <a href="#">
-                                    <img data-original="${value.img2}" alt="" class='lazy'>
-                                </a>
-                            </div>
-                        </div>`;
+                        $strLi +=
+                            '<div class="channel_ul' + value.sid + 'channel_ul">' +
+                            '<a href="#" class="title">' +
+                            '<span>' + value.title + '</span>' +
+                            '<span>' + value.info + '</span>' +
+                            '</a>' +
+                            '<div class="channel_img">' +
+                            '<a href="#">' +
+                            '<img data-original="' + value.img1 + '" alt="" class="lazy">' +
+                            '</a>' +
+                            '<a href="#">' +
+                            '<img data-original="' + value.img2 + '" alt="" class="lazy">' +
+                            '</a>' +
+                            '</div>' +
+                            '</div>';
                     } else {
-                        $strLi += `
-                            <div class="channel_ul${value.sid} channel_ul">
-                            <a href="#">
-                                <img data-original="${value.img1}" alt="" class='lazy'>
-                            </a>
-                        </div>`;
+                        $strLi +=
+                            '<div class="channel_ul' + value.sid + 'channel_ul">' +
+                            '<a href="#">' +
+                            '<img data-original="' + value.img1 + '" alt="" class="lazy">' +
+                            '</a>' +
+                            '</div>';
                     }
                     // 将str写入ul
 
@@ -637,13 +701,15 @@ define(['jlazyload'], function() {
                     });
                 });
             }); //done
-
-            $(window).scrollTop() < 200 ? $('.elevator').css({
-                top: $('.login_wrap').offset().top,
-            }) : $('.elevator').css({
-                position: 'fixed',
-                top: 74
+            $(window).on('scroll', function() {
+                console.log($(window).scrollTop());
+                $(window).scrollTop() > 800 ? $('.elevator').addClass('elevator_fix') : $('.elevator').removeClass('elevator_fix');
+                // $('.elevator_fix').stop(true).animate({
+                //     top: 75
+                // });
             });
+            $(window).scrollTop() > 800 ? $('.elevator').addClass('elevator_fix') : $('.elevator').removeClass('elevator_fix');
+
             // if ($(window).scrollTop() < 200) {
             //     $('.elevator').stop(true).animate({
             //         top: $('.login_wrap').offset().top

@@ -22,5 +22,5 @@ if (isset($_POST['submit'])) {
     $repass = sha1($_POST['repass']);
     $email = $_POST['email'];
     $conn->query("insert registry values(null,'$username','$password','$repass','$email',NOW())");
-    header('location:http://192.168.0.103/jingdong/src/index1.html');
+    header('location:http://192.168.13.24/jingdong/src/index1.html');
 }
